@@ -1,0 +1,15 @@
+﻿ul, ol, li {list-style: outside none none;}
+.nav {float: left;padding: 0;background-color: #5eab1f;}
+.nav li {display: inline-block;position: relative;vertical-align: middle;}
+.nav li:hover, .nav li.active {background-color: #4c9312;}
+.nav li a {color: #fff;float: left;font-size: 15px;padding: 16px 14px; text-decoration: none;}
+.nav li ul {background-color: #fff;border-radius: 0 0 5px 5px;box-shadow: 0 2px 3px #000;display: none;min-width: 200px;padding: 20px 0;position: absolute;top: 48px;z-index: 9999;}
+.nav li ul:before {border-bottom: 8px solid #fff;border-left: 8px solid transparent;border-right: 8px solid transparent;content: "";left: 28%;position: absolute;top: -8px;}
+.nav ul li {float: left;width: 100%;}
+.nav ul li a {color: #333;float: left;font-size: 15px;padding: 10px 5%;width: 90%;}
+.nav li:hover, .nav li.active {background-color: #4c9312;}
+.tbl-header{
+  width:calc(100% - 17px);
+  width:-webkit-calc(100% - 17px);
+  width:-moz-calc(100% - 17px);
+}

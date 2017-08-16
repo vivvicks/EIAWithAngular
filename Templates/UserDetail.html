@@ -1,0 +1,162 @@
+﻿<form novalidate name="form1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <h3>User Details</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Login ID
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="loginid" class="form-control" ng-model="UserMgmt.loginid" type="text" />
+                        <!--<span style="color: red" ng-show="form1.loginid.$error.required && submitted">Enter LoginID </span>-->
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        User Name
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="username" class="form-control" ng-model="UserMgmt.username" type="text" />
+                        <!--<span style="color: red" ng-show="form1.username.$error.required && submitted">Enter UserName </span>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Lock/Unlock
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <select ng-model="UserMgmt.LockUnlock" class="form-control" ng-options="s.name for s in LockUnlock track by s.id" name="LockUnlocktype" id="LockUnlocktype">
+                            <option name="select" id="0" value="">--Select--</option>
+                        </select>
+                        <!--<span style="color: red" ng-show="form1.LockUnlocktype.$error.required && submitted">Select Lock Type</span>-->
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Active/NonActive
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <select ng-model="UserMgmt.ActiveNonActive" class="form-control" ng-options="s.name for s in ActiveNonActive track by s.id" name="ActiveNonActivetype" id="ActiveNonActivetype">
+                            <option name="select" id="0" value="">--Select--</option>
+                        </select>
+                        <!--<span style="color: red" ng-show="form1.ActiveNonActivetype.$error.required && submitted">Select Active Type</span>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        <a href="#/AddUser">Add User</a>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input type="submit" class="btn btn-success" ng-click="SearchUser(UserMgmt);submitted=true" value="Search" />
+                        <input type="button" class="btn btn-success" ng-click="Clear()" value="Clear" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>20</option>
+                            <option>30</option>
+                            <option>40</option>
+                            <option>50</option>
+                        </select> records at a time.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="container">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Login ID</th>
+                                <th>User Name</th>
+                                <th>Email ID</th>
+                                <th>Lock Status</th>
+                                <th>Active Status</th>
+                                <th>Date of Birth</th>
+                                <th>Reset Password</th>
+                                <th>Terminal Name</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="List in UsersList.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                            <tr>
+                                <td><input type="checkbox" ng-model="List.checkedornot" ng-true-value="'{{List.UserMstID}}}'" ng-false-value="''" id="'{{List.UserMstID}}'" ng-click="chekedornot(UsersList)" /></td>
+                                <td><a href="#/EditUser" ng-click="EditUser(List)">{{List.LoginID}}</a></td>
+                                <td>{{List.Name}}</td>
+                                <td>{{List.Email}}</td>
+                                <td>{{List.LockStatus}}</td>
+                                <td>{{List.ActiveStatus}}</td>
+                                <td>{{List.DOB | date:'dd/MM/yyyy'}}</td>
+                                <td>
+                                    <a href="javascript:void(0);">
+                                        <span id="Label3" style="vertical-align: middle;">Reset password</span>
+                                    </a>
+                                </td>
+                                <td>{{List.P1}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        <input type="button" class="btn btn-success" ng-click="ActivateDeactivate(UsersList,'Unlock')" value="Unlock" ng-disabled="!clicked" />
+                        <input type="button" class="btn btn-success" ng-click="ActivateDeactivate(UsersList,'Activate')" value="Activate" ng-disabled="!clicked" />
+                        <input type="button" class="btn btn-success" ng-click="ActivateDeactivate(UsersList,'Deactivate')" value="Deactivate" ng-disabled="!clicked" />
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

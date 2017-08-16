@@ -1,0 +1,74 @@
+﻿<form novalidate name="form1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <h3>Role Updation</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Role Short Name
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="RoleSName" class="form-control" required name="RoleSName" ng-model="RoleMgmt.RoleSName" type="text" />
+                        <span style="color: red" ng-show="form1.RoleSName.$error.required && submitted">Enter Role Short Name </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Display Name
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="DisplayName" class="form-control" required name="DisplayName" ng-model="RoleMgmt.DisplayName" type="text" />
+                        <span style="color: red" ng-show="form1.DisplayName.$error.required && submitted">Enter display Name </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Status
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <select ng-model="RoleMgmt.selectedStatus" class="form-control" name="EnableDisabletype" id="EnableDisabletype">
+                            <option name="select" id="0" value="">--Select--</option>
+                            <option ng-repeat="status in EnableDisable" ng-selected="RoleMgmt.selectedStatus == status.id" value="{{status.id}}">{{status.name}}</option>
+                        </select>
+                        <span style="color: red" ng-show="form1.EnableDisable.$error.required && submitted">Select Status</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input type="submit" class="btn btn-success" ng-click="UpdateRole(RoleMgmt);submitted=true" value="Update Role" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,209 @@
+﻿<form novalidate name="form1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <h3>Courier Creation</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Courier Company Registration Number
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="CourierCoRegistrationNumberid" class="form-control" required name="CourierCoRegistrationNumber" ng-model="couriercomp.CourierCoRegistrationNumber" type="text" required />
+                        <span style="color: red" ng-show="form1.CourierCoRegistrationNumber.$error.required && submitted">Enter Courier Company Registration Number </span>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Courier Company Name
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="CourierCoNameid" class="form-control" required name="CourierCoName" ng-model="couriercomp.CourierCoName" type="text" required />
+                        <span style="color: red" ng-show="form1.CourierCoName.$error.required && submitted">Enter Courier Company Name</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Courier Company Tally Name
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="CourierCoTallyNameid" class="form-control" required name="CourierCoTallyName" ng-model="couriercomp.CourierCoTallyName" type="text" required />
+                        <span style="color: red" ng-show="form1.CourierCoTallyName.$error.required && submitted">Enter Courier Company Tally Name</span>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Contact Person
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="ContactPersonid" class="form-control" required name="ContactPerson" ng-model="couriercomp.ContactPerson" type="text" required />
+                        <span style="color: red" ng-show="form1.ContactPerson.$error.required && submitted">Enter Contact Person</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Courier Email Id
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="CourierEmailid" class="form-control" required name="CourierEmail" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-model="couriercomp.CourierEmail" type="text" required />
+                        <span style="color: red" ng-show="form1.CourierEmail.$error.required && submitted">Enter Courier Email Id</span>
+                        <span style="color:Red" ng-show="form1.CourierEmail.$dirty&&form1.CourierEmail.$error.pattern">Please Enter Valid Email</span>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Courier Contact No
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="CourierContactid" class="form-control" required name="CourierContact" ng-model="couriercomp.CourierContact" type="text" required />
+                        <span style="color: red" ng-show="form1.CourierContact.$error.required && submitted">Enter Courier Contact No</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Courier Company Address1
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="CourierCoAddr1id" class="form-control" required name="CourierCoAddr1" ng-model="couriercomp.CourierCoAddr1" type="text" required />
+                        <span style="color: red" ng-show="form1.CourierCoAddr1.$error.required && submitted">Enter Courier Company Address1</span>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Courier Company Address2
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="CourierCoAddr2id" class="form-control" required name="CourierCoAddr2" ng-model="couriercomp.CourierCoAddr2" type="text" required />
+                        <span style="color: red" ng-show="form1.CourierCoAddr2.$error.required && submitted">Enter Courier Company Address2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Courier Company State
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="CourierCoStateid" class="form-control" required name="CourierCoState" ng-model="couriercomp.CourierCoState" type="text" required />
+                        <span style="color: red" ng-show="form1.CourierCoState.$error.required && submitted">Enter Courier Company State</span>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Courier Company City
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="CourierCoCityid" class="form-control" required name="CourierCoCity" ng-model="couriercomp.CourierCoCity" type="text" required />
+                        <span style="color: red" ng-show="form1.CourierCoCity.$error.required && submitted">Enter Courier Company City</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Courier Company Pin Code
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="CourierCoPinCodeid" class="form-control" required name="CourierCoPinCode" ng-pattern="/^[0-9]{1,5}$/"  ng-model="couriercomp.CourierCoPinCode" type="text" required />
+                        <span style="color: red" ng-show="form1.CourierCoPinCode.$error.required && submitted">Enter Courier Company Pin Code</span>
+                        <span style="color:Red" ng-show="form1.CourierCoPinCode.$dirty&&form1.CourierCoPinCode.$error.pattern">Only Numbers Allowed, Maximum 5 Characters</span>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Member Type
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <select ng-model="couriercomp.mastertype" class="form-control" ng-options="s.MasterDesc for s in mastertype | filter:{MasterType:'MemberType'}" name="MemberType" id="MemberTypeid">
+                            <option name="select" id="0" value="">--Select--</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Courier Type
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <select ng-model="couriercomp.mastertype1" class="form-control" ng-options="s.MasterDesc for s in mastertype1 | filter:{MasterType:'CourierType'}" name="Couriertype" id="Couriertypeid">
+                            <option name="select" id="0" value="">--Select--</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 col-sm-3">
+                Courier registration expiry date
+            </div>
+            <div class="col-xs-3 col-sm-3">
+                <input id="CourierCoRegistrationExpiryDt" mydatepicker ng-model="couriercomp.CourierCoRegistrationExpiryDt" ng-change="selectDate(couriercomp.CourierCoRegistrationExpiryDt)" char-limit="10" class="form-control" name="CourierCoRegistrationExpiryDt" type="text" />
+            </div>
+            <div class="col-xs-3 col-sm-3">
+            </div>
+            <div class="col-xs-3 col-sm-3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input type="submit" class="btn btn-success" ng-click="Save(couriercomp,'couriermaster');submitted=true" value="Create Courier" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="976852ca969f43f4bde250739435975c" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="EIA_DEVModel.ACC_Invoice" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.ACC_InvoiceDtl" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.ACC_Receipt" Width="1.5" PointX="11.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.ACC_ReceiptChrg" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.ACC_ReceiptDtl" Width="1.5" PointX="5.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.AUC_AuctionList" Width="1.5" PointX="13.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.AUC_AuctionListDtl" Width="1.5" PointX="13.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.AUC_AuctionSaleLot" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.AUC_BOE" Width="1.5" PointX="15.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.AUC_BOEGroup" Width="1.5" PointX="15.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.AUC_SaleList" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.EXP_CSB1" Width="1.5" PointX="5.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.EXP_CSB1Dtl" Width="1.5" PointX="17.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.EXP_CSB1WeightAcceptance" Width="1.5" PointX="7.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.EXP_CSB1WeightAcceptanceDtl" Width="1.5" PointX="9.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.EXP_EntryGatePass" Width="1.5" PointX="17.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.EXP_OFLGatePass" Width="1.5" PointX="11.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.EXP_ReleasePass" Width="1.5" PointX="17.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.GEN_LOV" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.IMP_Form1" Width="1.5" PointX="19.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.IMP_Form1Dtl" Width="1.5" PointX="19.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.IMP_Form2" Width="1.5" PointX="13.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.IMP_Form2Dtl" Width="1.5" PointX="19.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.IMP_GatePass" Width="1.5" PointX="19.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.IMP_GatePassDtl" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.IMP_OHForwarding" Width="1.5" PointX="2.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.IMP_OHGPGatePass" Width="1.5" PointX="21.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.IMP_OnHoldMemo" Width="1.5" PointX="21.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Airline_Dtl" Width="1.5" PointX="23.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Airline_MST" Width="1.5" PointX="23.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Airport_MST" Width="1.5" PointX="7.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_CheckList_MST" Width="1.5" PointX="9.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_CommonMaster_MST" Width="1.5" PointX="23.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Country_MST" Width="1.5" PointX="15.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Courier_MST" Width="1.5" PointX="23.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_CourierEmp_MST" Width="1.5" PointX="23.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Currency_MST" Width="1.5" PointX="25.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_DelayedChrg_MST" Width="1.5" PointX="25.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Flightmaster_MST" Width="1.5" PointX="4.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Global_Mapping_Mst" Width="1.5" PointX="25.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Modeofpayment_MST" Width="1.5" PointX="25.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Terminal_MST" Width="1.5" PointX="25.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_UOM_MST" Width="1.5" PointX="27.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_UOMCategory_MST" Width="1.5" PointX="27.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_UploadFile_MST" Width="1.5" PointX="6.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_UserType_MST" Width="1.5" PointX="27.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Warehouse_MST" Width="1.5" PointX="11.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.MSBM_TBL" Width="1.5" PointX="27.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.sysdiagram" Width="1.5" PointX="13.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VMSG_ALERT_M" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VMSG_RELATION" Width="1.5" PointX="10" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VMSG_TEMPLATE_M" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VRCF_COLUMN_DTL" Width="1.5" PointX="15.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VRCF_DEBUG_DTL" Width="1.5" PointX="27.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VRCF_TABLE_DTL" Width="1.5" PointX="27.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VRCF_XLSX_STYLE" Width="1.5" PointX="0.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VSEC_APPLICATION_AUDIT_TRAIL" Width="1.5" PointX="8.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VSEC_APPLICATIONS" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VSEC_FUNCTION_ACCESS" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VSEC_FUNCTION_MST" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VSEC_LOGIN_MST" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VSEC_PROFILE_MST" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VSEC_QUESTION_MST" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VSEC_ROLE_MST" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VSEC_USER_ACTION_HST" Width="1.5" PointX="29.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VSEC_USER_MST" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VSEC_USER_ROLE_MAP" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.ACC_Invoice_Hst" Width="1.5" PointX="29.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.APP_LOGGER" Width="1.5" PointX="29.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.EXP_OFLGatePass_HST" Width="1.5" PointX="29.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.GEN_APP_PARAM" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.IMP_OHTGPGatePass" Width="1.5" PointX="29.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_DelayedChrg_MST_bak" Width="1.5" PointX="2.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Flightmaster_HST" Width="1.5" PointX="21.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Global_Mapping_Hst" Width="1.5" PointX="31.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Modeofpayment_HST" Width="1.5" PointX="31.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_Terminal_HST" Width="1.5" PointX="4.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.M_UserType_HST" Width="1.5" PointX="31.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.MSBM_HST" Width="1.5" PointX="10.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.SEQ_EMPMASTER" Width="1.5" PointX="31.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.tempColumnDtl7" Width="1.5" PointX="12.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VMSG_ALERT_DETAILS" Width="1.5" PointX="31.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VMSG_ErrorLog" Width="1.5" PointX="17.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VMSG_GENERATOR" Width="1.5" PointX="31.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VMSG_GENERATOR_TEMP" Width="1.5" PointX="31.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VMSG_HISTORY_LOGS" Width="1.5" PointX="31.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VMSG_TIME_WINDOW_M" Width="1.5" PointX="6.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VRCF_JSCRIPT_DTL" Width="1.5" PointX="33.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.Form2Arrived" Width="1.5" PointX="33.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.GatePassIssued" Width="1.5" PointX="33.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.vw_AirlineMst" Width="1.5" PointX="33.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.vw_AlertDtl" Width="1.5" PointX="33.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VW_UserDetail" Width="1.5" PointX="33.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VWEDT_COURIEREMPMST" Width="1.5" PointX="24.125" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VWEDT_FLIGHTMASTERMST" Width="2.125" PointX="33.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VWEDT_MODEPAYMST" Width="1.5" PointX="35.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VWEDT_USERTYPEMST" Width="1.5" PointX="35.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VWEXP_OFLGatePass" Width="1.5" PointX="6.75" PointY="35.75" IsExpanded="true" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VMSG_RELATION_VMSG_ALERT_M" ManuallyRouted="false" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VMSG_RELATION_VMSG_TEMPLATE_M" ManuallyRouted="false" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VSEC_FUNCTION_ACCESS_VSEC_APPLICATIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VSEC_FUNCTION_MST_VSEC_APPLICATIONS" ManuallyRouted="false" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VSEC_FUNCTION_ACCESS_VSEC_FUNCTION_MST" ManuallyRouted="false" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VSEC_FUNCTION_ACCESS_VSEC_ROLE_MST" ManuallyRouted="false" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VSEC_LOGIN_MST_VSEC_PROFILE_MST" ManuallyRouted="false" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VSEC_LOGIN_MST_VSEC_QUESTION_MST" ManuallyRouted="false" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VSEC_LOGIN_MST_VSEC_QUESTION_MST1" ManuallyRouted="false" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VSEC_LOGIN_MST_VSEC_QUESTION_MST2" ManuallyRouted="false" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VSEC_LOGIN_MST_VSEC_USER_MST" ManuallyRouted="false" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VSEC_USER_ROLE_MAP_VSEC_LOGIN_MST" ManuallyRouted="false" />
+        <AssociationConnector Association="EIA_DEVModel.FK_VSEC_USER_ROLE_MAP_VSEC_ROLE_MST" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VWEDT_COURIERMST" Width="2.875" PointX="20.375" PointY="35.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

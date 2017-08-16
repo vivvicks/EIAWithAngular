@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_LayoutMasterMenu.cshtml";
+}
+
+<div ng-app="UserMgmtModule">
+    <link href="~/Content/loading-bar.css" rel="stylesheet" />  
+
+    @System.Web.Optimization.Styles.Render("~/UserManagement/css")
+    @System.Web.Optimization.Scripts.Render("~/bundles/UserMgmtNgbundle")
+    <div ui-view></div>
+    @*<div ng-view></div>*@    
+</div>

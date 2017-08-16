@@ -1,0 +1,122 @@
+﻿
+body
+{
+	margin: 0px;
+	padding: 0px; font-family:Tahoma;
+}
+
+.header1
+{
+	/*background: #eb6300;*/
+	background:#C60B40 !important;
+	/*width: 65%;*/
+	
+	width: 71%;
+	font-weight :bold; 
+/*	height: 21px; */
+    height:25px !important;
+	float: left;
+	padding-top: 1px;
+	position: relative;
+    display: inline;
+}
+.header3
+{
+    background-color:#CC0033;
+	font-weight :bold; 
+    text-align:center;
+    
+}
+
+
+.header2
+{
+	font-family: verdana;
+	font-size: 11px;
+	/*background: #eb6300;
+	color: #ffffff;*/
+	background:#C60B40 !important;
+	padding-right: 10px;
+	text-align: right;
+	height:25px !important;
+	vertical-align: baseline;
+	padding-top: 3px;
+	border-bottom:solid 1px #fff;
+}
+.content
+{
+	background-color: White;
+	width: 100%;
+	float: left;
+	clear: both;
+	z-index : -1000;
+}
+
+.header
+{
+	width: 100%;
+	height: 75px !important;
+	clear: both;
+}
+
+#leftwrap
+{
+	height: 80px;
+	float: left;
+	clear: left;
+}
+
+#rightwrap
+{
+	height: 80px;
+	float: right;
+	clear: right;
+}
+
+.footer
+{
+	clear: both;
+	width: 100%;
+	font-family: Arial;
+	font-size: 11px;
+	height: 25px;
+	background: #6a0002;
+	color: #ffffff;
+	position: absolute;
+	bottom: 0px;
+}
+ 
+ 
+ /*new css*/
+#ctl00_ContentPlaceHolder1_Header{ font-size:13px; color:#626262; margin:5px 0 5px 0;}
+.second_head{ color:#626262  !important; font-size:11px !important; font-weight:bold !important; text-align:left !important;
+              color:#fff;  line-height:22px  !important; height:22px  !important; padding-left:10px !important;}
+.white_bg{ background:#fff;  border:none !important;}              
+.main_table{ background:#F6F6F6; border:solid 1px #dddddd;}
+.borderstyle{ }
+.borderstyle td{ height:20px;
+    margin-left: 40px;
+}
+.borderstyle1 {  }
+.borderstyle1 td{ height:20px;}
+.textarea1{ font-size:11px; font-family:tahoma; width:277px;}
+.textarea1 input{ border:solid 1px #ccc !important; color:#626262; font-size:11px !important; width:250px; height:16px; margin: 2px 0 2px 0;}
+.textarea1 select {  border:solid 1px #ccc !important; color:#626262; font-size:11px !important; width:255px !important;  height:16px;}
+#ctl00_ContentPlaceHolder1_grdFlightDetails{ border:solid 1px #ccc !important;}
+.button_style{ line-height:15px; border:solid 1px #f1d9e1; color:#c60b40; font-size:11px; font-weight:bold;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 7px;
+    }
+.second_header{ background:#F0DAE1; border:solid 1px #333;}
+.wite_bg_row{ background:#fff;}
+.alternate_bg_row{ background:#FEF4F7;}
+.main_hd{ border-bottom:solid 2px #c60b40 !important; font-size:13px; font-weight:bold; line-height:25px !important; padding-left:10px; }
+.ctl00_mc_Menu1_2 a{ font-weight:bold !important;} 
+#ctl00_mc_Menu1n8{border-left:solid 1px #fff;}
+#ctl00_LoginUserDetail1_MasterLblUser{ color:#fff;}
+#ctl00_LoginUserDetail1_MasterLblAuthType{ color:#fff;}
+#ctl00_mc_Menu1n8{ border-right:solid 1px #fff;}
+.fontstyle{color:#fff;}
+.border_style{ padding: 0 3px 0 3px; line-height:25px;}
+.homepage_heading{ padding-top:220px;}

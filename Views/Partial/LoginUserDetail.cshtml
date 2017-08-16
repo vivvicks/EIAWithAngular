@@ -1,0 +1,26 @@
+﻿<table cellpadding="0" cellspacing="0" border="0" align="right">
+    <tr>
+        <td>&nbsp;</td>
+        <td><span id="lblFinancialYear" style="font:bold;color:#ffffff">F.Y.</span></td>
+        <td>
+            @Html.DropDownList("ddlFinancialYear", ViewBag.FinYear as SelectList)&nbsp;
+        </td>
+        <td class="border_style">&nbsp;</td>
+        <td class="fontstyle">
+            <span id="lblTerminalCode" style="font:bold;color:#ffffff">Terminal:</span>
+        </td>
+        <td class="fontstyle">
+            <span id="lblTerminalCodeValue" style="font:bold;color:#ffffff"> @ViewBag.TerminalCode</span>
+            <input type="hidden" />
+        </td>
+        <td class="border_style">&nbsp;</td>
+        <td class="fontstyle">
+            <span id="MasterLblUser" style="font:bold;color:#ffffff">@ViewBag.LoginID</span>
+        </td>
+        <td class="border_style">&nbsp;</td>
+        <td>
+            <a id="lnkLogout" style="font-size:11px;color:#ffffff">@Html.ActionLink("Logout", "Logout", "Login")</a>
+        </td>
+    </tr>
+
+</table>

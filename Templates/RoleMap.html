@@ -1,0 +1,118 @@
+﻿<form novalidate name="form1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <h3>Role Details</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Role Name
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <select ng-model="rolemap.roleslist" class="form-control" ng-options="s.DisplayName for s in roleslist track by s.RoleId" name="rolemapListtype" id="rolemapListtype" required>
+                            <option name="select" id="0" value="">--Select--</option>
+                        </select>
+                        <span style="color: red" ng-show="form1.rolemapListtype.$error.required && submitted">Select role</span>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Users
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <select ng-model="rolemap.AllocatedORAvailable" class="form-control" ng-options="s.name for s in AllocatedORAvailable track by s.id" name="AllocatedORAvailabletype" id="AllocatedORAvailabletype" required>
+                            <option name="select" id="0" value="">--Select--</option>
+                        </select>
+                        <span style="color: red" ng-show="form1.AllocatedORAvailabletype.$error.required && submitted">Select Users</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input type="submit" class="btn btn-success" ng-click="Search(rolemap);submitted=true" value="Search" />
+                        <input type="button" class="btn btn-success" ng-click="Clear()" value="Clear" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>20</option>
+                            <option>30</option>
+                            <option>40</option>
+                            <option>50</option>
+                        </select> records at a time.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="container">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>User Name</th>
+                                <th>Login ID</th>
+                                <th>Email ID</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="List in UsersList.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                            <tr>
+                                <td><input type="checkbox" ng-model="List.checkedornot" ng-true-value="'{{List.LoginMId}}}'" ng-false-value="''" id="'{{List.LoginMId}}'" ng-click="chekedornot(UsersList,rolemap)"></td>
+                                <td>{{List.Name}}</td>
+                                <td>{{List.LoginID}}</td>
+                                <td>{{List.Email}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 col-sm-3">
+                <input type="button" class="btn btn-success" ng-click="AllocateDeAllocate(UsersList,rolemap,'Allocate')" value="Allocate" ng-disabled="!Allocate" />
+                <input type="button" class="btn btn-success" ng-click="AllocateDeAllocate(UsersList,rolemap,'DeAllocate')" value="DeAllocate" ng-disabled="!DeAllocate" />
+            </div>
+            <div class="col-xs-3 col-sm-3">
+            </div>
+            <div class="col-xs-3 col-sm-3">
+            </div>
+            <div class="col-xs-3 col-sm-3">
+            </div>
+        </div>
+    </div>
+</form>

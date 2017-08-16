@@ -1,0 +1,105 @@
+﻿<form novalidate name="form1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <h3>Profile Creation</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        profile Name
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="profilename" class="form-control" required name="profilename" ng-model="profile.profilename" type="text" required />
+                        <span style="color: red" ng-show="form1.profilename.$error.required && submitted">Enter profile Name </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Pwd Exp Days
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="PwdExpDays" class="form-control" required name="PwdExpDays" ng-model="profile.PwdExpDays" type="text" ng-pattern="/^[0-9]+$/" required />
+                        <span style="color: red" ng-show="form1.PwdExpDays.$error.required && submitted">Enter PwdExp Days </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Pwd Retry Count
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="PwdRetryCount" class="form-control" required name="PwdRetryCount" ng-model="profile.PwdRetryCount" type="text" ng-pattern="/^[0-9]+$/" required />
+                        <span style="color: red" ng-show="form1.PwdRetryCount.$error.required && submitted">Enter PwdRetry Count </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Pwd Grace Period
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="PwdGracePeriod" class="form-control" required name="PwdGracePeriod" ng-model="profile.PwdGracePeriod" type="text" ng-pattern="/^[0-9]+$/" required />
+                        <span style="color: red" ng-show="form1.PwdGracePeriod.$error.required && submitted">Enter Pwd Grace Period</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        No of Sessions
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="NoofSessions" class="form-control" required name="NoofSessions" ng-model="profile.NoofSessions" type="text" ng-pattern="/^[0-9]+$/" required />
+                        <span style="color: red" ng-show="form1.NoofSessions.$error.required && submitted">Enter No of Sessions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input type="submit" class="btn btn-success" ng-click="SaveProfile(profile);submitted=true" value="Create Profile" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

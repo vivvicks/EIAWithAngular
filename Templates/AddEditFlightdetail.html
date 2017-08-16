@@ -1,0 +1,126 @@
+﻿<form novalidate name="form1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <h3>Flight Details</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Flight Number
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="flightnumberid" class="form-control" required name="FlightNumber" ng-model="flight.FlightNumber" type="text" required />
+                        <span style="color: red" ng-show="form1.FlightNumber.$error.required && submitted">Enter flight number</span>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Airline Name
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <select ng-model="flight.AirlineCode" class="form-control" name="AirlineListtype" id="AirlineListtype">
+                            <option name="select" id="0" value="">--Select--</option>
+                            <option ng-repeat="airline in AirlineList" ng-selected="flight.AirlineCode==airline.AirlineCode" value="{{airline.AirlineCode}}">{{airline.AirlineName}}</option>
+                        </select>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Airport of Departure
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <select ng-model="flight.AirportofDeparture" class="form-control" name="AirportofDeparture" id="AirportofDeparture">
+                            <option name="select" id="0" value="">--Select--</option>
+                            <option ng-repeat="dep in AirportofDeparture" ng-selected="flight.AirportofDeparture==dep.AirportCode" value="{{dep.AirportCode}}">{{dep.AirportDesc}}</option>
+                        </select>                           
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Airport of Destination
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <select ng-model="flight.AirportofDestination" class="form-control" name="AirportofDestination" id="AirportofDestination">
+                            <option name="select" id="0" value="">--Select--</option>
+                            <option ng-repeat="des in AirportofDestination" ng-selected="flight.AirportofDestination==des.AirportCode" value="{{des.AirportCode}}">{{des.AirportDesc}}</option>
+                        </select>                             
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        ETD (HHMM Format 24)
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="flightnumberid" required name="ETD" class="form-control" ng-model="flight.ETD" type="text" required />
+                        <span style="color: red" ng-show="form1.ETD.$error.required && submitted">Enter ETD</span>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        ETA (HHMM Format 24)
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="flightnumberid" class="form-control" required name="ETA" ng-model="flight.ETA" type="text" required />
+                        <span style="color: red" ng-show="form1.ETA.$error.required && submitted">Enter ETA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Flight Type
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <select ng-model="flight.FlightType" class="form-control" name="MemberType" id="MemberTypeid">
+                            <option name="select" id="0" value="">--Select--</option>
+                            <option ng-repeat="mst in mastertype | filter:{MasterType:'ModuleType'}" ng-selected="flight.FlightType == mst.MasterDesc" value="{{mst.MasterId}}">{{mst.MasterDesc}}</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                </div>
+            </div>
+        </div>       
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">                        
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input type="button" class="btn btn-success" ng-click="Save(flight,'flightmaster');submitted=true" value="Add" />
+                        <input type="button" class="btn btn-success" ng-click="Clear()" value="Clear" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

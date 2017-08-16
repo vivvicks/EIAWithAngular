@@ -1,0 +1,152 @@
+﻿<form novalidate name="form1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <h3>Flight Details</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Flight Number
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="flightnumberid" class="form-control" ng-model="flight.FlightNumber" type="text" />
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Airline Name
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <select ng-model="flight.AirlineList" class="form-control" ng-options="s.AirlineName for s in AirlineList track by s.AirlineCode" name="AirlineListtype" id="AirlineListtype">
+                            <option name="select" id="0" value="">--Select--</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Flight Type
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <select ng-model="flight.mastertype" class="form-control" ng-options="s.MasterDesc for s in mastertype | filter:{MasterType:'ModuleType'}" name="MemberType" id="MemberTypeid">
+                            <option name="select" id="0" value="">--Select--</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        <a href="#/AddFlight">Add Record</a>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input type="submit" class="btn btn-success" ng-click="SearchFlight(flight);submitted=true" value="Search" />
+                        <input type="button" class="btn btn-success" ng-click="Clear()" value="Clear" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>20</option>
+                            <option>30</option>
+                            <option>40</option>
+                            <option>50</option>
+                        </select> records at a time.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="container">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Flight Number</th>
+                                <th>Airline Name</th>
+                                <th>Airport of Departure</th>
+                                <th>Airport of destination</th>
+                                <th>ETD</th>
+                                <th>ETA</th>
+                                <th>Terminal Code</th>
+                                <th>Flight Type</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="List in FlightsList.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                            <tr>
+                                <td><a href="#/EditFlight" ng-click="Edit(List,'EditFlight')" value="{{List.FlightNumber}}">Edit</a></td>
+                                <td><input type="checkbox" ng-model="isTrue" ng-change="getIndex(List.FlightNumber,isTrue)" /></td>
+                                <td>{{List.FlightNumber}}</td>
+                                <td>{{List.AirlineCode}}</td>
+                                <td>{{List.AirportofDeparture}}</td>
+                                <td>{{List.AirportofDestination}}</td>
+                                <td>{{List.ETD}}</td>
+                                <td>{{List.ETA}}</td>
+                                <td>{{List.TerminalCode}}</td>
+                                <td>{{List.FlightType == "I" ? "Import" : "Export"}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        <input type="button" class="btn btn-success" ng-click="Remove('flightmaster')" value="Remove" ng-disabled="!removedisable"/>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

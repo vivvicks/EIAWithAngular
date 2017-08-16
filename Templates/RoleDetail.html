@@ -1,0 +1,109 @@
+﻿<form novalidate name="form1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <h3>Role Details</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2">
+                        Role Short Name
+                    </div>
+                    <div class="col-xs-2 col-sm-2">
+                        <input id="RoleSName" class="form-control" ng-model="RoleMgmt.RoleSName" type="text" />
+                    </div>
+                    <div class="col-xs-2 col-sm-2">
+                        Role Name
+                    </div>
+                    <div class="col-xs-2 col-sm-2">
+                        <input id="DisplayName" class="form-control" ng-model="RoleMgmt.DisplayName" type="text" />
+                    </div>
+                    <div class="col-xs-2 col-sm-2">
+                        Status
+                    </div>
+                    <div class="col-xs-2 col-sm-2">
+                        <select ng-model="RoleMgmt.EnableDisable" class="form-control" ng-options="s.name for s in EnableDisable track by s.id" name="EnableDisabletype" id="EnableDisabletype">
+                            <option name="select" id="0" value="">--Select--</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        <a href="#/AddRole">Add Role</a>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input type="submit" class="btn btn-success" ng-click="SearchRoles(RoleMgmt);submitted=true" value="Search" />
+                        <input type="button" class="btn btn-success" ng-click="Clear()" value="Clear" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>20</option>
+                            <option>30</option>
+                            <option>40</option>
+                            <option>50</option>
+                        </select> records at a time.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="container">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Role Short Name</th>
+                                <th>Role Name</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="List in RolesList.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                            <tr>
+                                <td><a href="#/EditRole" ng-click="EditRole(List)" value="{{List.RoleId}}">Edit</a></td>
+                                <td>{{List.RoleSName}}</td>
+                                <td>{{List.DisplayName}}</td>
+                                <td>{{List.Status}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+    </div>
+</form>

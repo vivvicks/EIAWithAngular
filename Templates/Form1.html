@@ -1,0 +1,475 @@
+﻿<form novalidate name="formImport">   
+    <script type="text/ng-template" id="IGMDetails.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">IGM Details</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-3">
+                            Flight Number
+                        </div>
+                        <div class="col-xs-3 col-sm-3">
+                            {{ IGMDetails.FlightNumber }}
+                        </div>
+                        <div class="col-xs-3 col-sm-3">
+                            Flight Date
+                        </div>
+                        <div class="col-xs-3 col-sm-3">
+                            {{ IGMDetails.DateOfArrival }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-3">
+                            Time of Arrival
+                        </div>
+                        <div class="col-xs-3 col-sm-3">
+                            {{ IGMDetails.TimeOfArrival }}
+                        </div>
+                        <div class="col-xs-3 col-sm-3">
+                            IGM Number
+                        </div>
+                        <div class="col-xs-3 col-sm-3">
+                            {{ IGMDetails.IGMNo }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-3">
+                            IGM Date
+                        </div>
+                        <div class="col-xs-3 col-sm-3">
+                            {{ IGMDetails.IGMDate }}
+                        </div>
+                        <div class="col-xs-3 col-sm-3">
+                        </div>
+                        <div class="col-xs-3 col-sm-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Form1 MAWB Number</th>
+                                        <th>Form2 MAWB Number</th>
+                                        <th>Express Company Name</th>
+                                        <th>Form I No. of Bags</th>
+                                        <th>Form I No. of Pkgs/Bags</th>
+                                        <th>Form I No. of Shps</th>
+                                        <th>Form I No. of Weight</th>
+                                        <th>Form I Actual No. of Pkgs/Bags</th>
+                                        <th>Form I Actual No. of Weight</th>
+                                        <th>Form II No. of Bags</th>
+                                        <th>Form II No. of Shps</th>
+                                        <th>Form II No. of Pkgs</th>
+                                        <th>Form II No. of Weight</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{ IGMDetails.FormIMAWBNo }}</td>
+                                        <td>{{ IGMDetails.FormIIMAWBNo }}</td>
+                                        <td>{{ IGMDetails.CourierCompanyName }}</td>
+                                        <td>{{ IGMDetails.Form1ActualNoofBags }}</td>
+                                        <td>{{ IGMDetails.Form1ActualNoofPackages }}</td>
+                                        <td>{{ IGMDetails.Form1ActualNoofShps }}</td>
+                                        <td>{{ IGMDetails.Form1Weight }}</td>
+                                        <td>{{ IGMDetails.Form1ActualNoofPackages }}</td>
+                                        <td>{{ IGMDetails.Form1ActualWeight }}</td>
+                                        <td>{{ IGMDetails.Form2NoofBags }}</td>
+                                        <td>{{ IGMDetails.Form2NoofShps }}</td>
+                                        <td>{{ IGMDetails.Form2NoofPkgs }}</td>
+                                        <td>{{ IGMDetails.Form2Weight }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+    <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <h3>Import -> Enter Form I</h3>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3">
+                                    Flight Number
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtFlightNumber" class="form-control" type="text" ng-model="form1.FlightNumber" required />
+                                    <span style="color: red" ng-show="formImport.txtFlightNumber.$error.required && submitted">Enter Flight Number </span>
+                                    <div id="divFlightNumber" style="position: absolute;">
+                                        <select ng-model="form1.FlightNumber" id="ddlFlightNumber" name="FlightNumber" class="ddlFlightNumber"
+                                                style="position: relative; top: 0px; left: 0px; z-index: 1;height:100px;" size="4">
+                                            <option value="0">--Select--</option>
+                                            <option ng-repeat="Flight in FlightList" ng-selected="form1.FlightNumber==Flight.FlightNumber" value="{{Flight.FlightNumber}}">{{Flight.FlightNumber}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    Airline Name
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtAirlines" class="form-control" type="text" ng-model="form1.AirlineName" readonly />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12" style="height:10px">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3">
+                                    Airport Of Arrival  [Dest.]
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtAirportOfArrival" class="form-control" type="text" ng-model="form1.AirportofDestination" readonly />
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    Airport Of Departure [Origin]
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtAirportOfShipment" class="form-control" type="text" ng-model="form1.AirportofDeparture" readonly />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12" style="height:10px">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3">
+                                    Date Of Arrival
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input mydatepicker id="txtDateOfArrival" class="form-control" type="text" ng-model="form1.DateOfArrival" ng-change="selectDate(form1.DateOfArrival)" />
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    Time Of Arrival [Load] (24:00)
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtTimeOfArrival" type="text" style="width:50px" ng-model="form1.ETAHrs" required /> : <input id="txtTimeOfArrival1" type="text" style="width:50px" ng-model="form1.ETAMin" required />
+                                    <span style="color: red" ng-show="formImport.txtTimeOfArrival.$error.required && submitted">Enter hrs of Time of Arrival </span>
+                                    <span style="color: red" ng-show="formImport.txtTimeOfArrival1.$error.required && submitted">Enter mins of Time of Arrival </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12" style="height:10px">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3">
+                                    IGM Number
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtIGMNo" name="IGMNo" type="text" class="form-control" ng-model="form1.IgmNumber" />
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    IGM Date
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input mydatepicker id="txtIgmDate" type="text" ng-model="form1.IgmDate" class="form-control" ng-change="selectDate(form1.IgmDate)" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12" style="height:10px">
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3">
+                                    Supervisor Name
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtsupevisorname" class="form-control" type="text" ng-model="form1.SupervisorName" />
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    Security Officer
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtsecurityofficer" class="form-control" type="text" ng-model="form1.SecurityOfficer" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12" style="height:10px">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3">
+                                    Airline Employee Name
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtairlineEmpname" class="form-control" type="text" ng-model="form1.AirlineEmpName" />
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    Custom Officer
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtcustomerOfficer" class="form-control" type="text" ng-model="form1.CustomOfficer" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12" style="height:10px">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3">
+                                    Duty Officer
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtDutyOfficer" class="form-control" type="text" ng-model="form1.DutyOfficer" />
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    Courier Representative
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtcourierrepresent" class="form-control" type="text" ng-model="form1.CourierRepresentative" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3">
+                                    MAWB Number
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtMAWBNo" name="MAWBNo" type="text" class="form-control" ng-model="form1.MAWBNo" required />
+                                    <span style="color: red" ng-show="formImport.txtMAWBNo.$error.required && submitted">Enter MAWB Number </span>
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    Express Company Name
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtCourierCompanyName" type="text" class="form-control" ng-model="form1.courierList" required />
+                                    <span style="color: red" ng-show="formImport.txtCourierCompanyName.$error.required && submitted">Enter Express Company Name </span>
+                                    <div id="divCourierCompanyName" style="position: absolute;">
+                                        <select id="ddlCourierCompanyName" name="ddlCourierCompanyName" class="ddlCourierCompanyName"
+                                                style="position: relative; top: 0px; left: 0px; z-index: 1;height:100px;" size="4"
+                                                ng-model="form1.courierList"
+                                                ng-options="courier.CourierCoName for courier in courierList track by courier.CourierCoId">
+                                            <option value="">--Select--</option>
+                                        </select>
+                                        <!--<select ng-model="form1.courierList" id="ddlCourierCompanyName" name="ddlCourierCompanyName" class="ddlCourierCompanyName"
+                                                style="position: relative; top: 0px; left: 0px; z-index: 1;height:100px;" size="4">-->
+                                        <!--<option value="0">--Select--</option>
+                                        <option ng-repeat="courier in courierList" ng-selected="form1.courierList==courier.id" value="{{courier.Name}}">{{courier.Name}}</option>-->
+                                        <!--<option  ng-repeat="courier in courierList" ng-value="{{courier.Id}}">{{courier.Name}}</option>
+                                        </select>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12" style="height:10px">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3">
+                                    Manifest Number Of Packages/Bags
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtNumberOfPackages" type="text" class="form-control" ng-model="form1.NoOfPackages" required />
+                                    <span style="color: red" ng-show="formImport.txtNumberOfPackages.$error.required && submitted">Enter Manifest Number Of Packages/Bags</span>
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    Manifest Weight [in kg]
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtweight" type="text" class="form-control" ng-model="form1.Weight" required />
+                                    <span style="color: red" ng-show="formImport.txtweight.$error.required && submitted">Enter Manifest Weight</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12" style="height:10px">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3">
+                                    Actual Number Of Packages/Bags
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtActualNumber" type="text" class="form-control" ng-model="form1.ActualNoOfPackages" required />
+                                    <span style="color: red" ng-show="formImport.txtActualNumber.$error.required && submitted">Enter Actual Number Of Packages/Bags</span>
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    Actual Weight [in kg]
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtActualWeight" type="text" class="form-control" ng-model="form1.ActualWeight" required />
+                                    <span style="color: red" ng-show="formImport.txtActualWeight.$error.required && submitted">Enter Actual Weight</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12" style="height:10px">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3">
+                                    ULD Number
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtULDNumber" type="text" class="form-control" ng-model="form1.UldNo" required />
+                                    <span style="color: red" ng-show="formImport.txtULDNumber.$error.required && submitted">Enter ULD Number</span>
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    Co Loader
+                                </div>
+                                <div class="col-xs-3 col-sm-3">
+                                    <input id="txtCoLoader" type="text" class="form-control" ng-model="form1.Coloader" required />
+                                    <span style="color: red" ng-show="formImport.txtCoLoader.$error.required && submitted">Enter Co Loader</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12" style="height:10px">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12" style="height: 10px; align-items: center">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-4">
+                            <a ng-click="open('lg')" ng-disabled="formImport.MAWBNo.$valid">Check IGM Status</a>
+                            <input type="submit" class="btn btn-success" ng-disabled="formImport.$invalid" ng-click="addItem(form1);submitted=true" value="add" />
+                            <input type="submit" class="btn btn-success" ng-disabled="!disable" ng-click="modifyItem(Form1Details)" value=" modify" />
+                            <input type="submit" class="btn btn-success" ng-disabled="!disable" ng-click="deleteItem(Form1Details)" value=" delete" />
+                        </div>
+                        <div class="col-xs-3 col-sm-4">
+                        </div>
+                        <div class="col-xs-3 col-sm-4">
+                            <input type="submit" class="btn btn-success" ng-disabled="!disableAdd" ng-click="validateInput()" value="Add" />
+                            <input type="submit" class="btn btn-success" ng-disabled="!disableSave" ng-click="Save(form1,Form1Details)" value="Save" />
+                            <input type="submit" class="btn btn-success" ng-click="" value="Clear" />
+                            <input type="submit" class="btn btn-success" ng-click="" value="Close" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12" style="height:20px">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12" style="height:10px">
+                    <div class="container">
+                        <!--<div class="tbl-header">-->
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Select</th>
+                                    <th>SR.Number</th>
+                                    <th>MAWB Number</th>
+                                    <th>Express Company Name</th>
+                                    <th>Manifest Number Of Packages</th>
+                                    <th>Manifest Weight</th>
+                                    <th>Actual Number Of Packages</th>
+                                    <th>Actual Weight</th>
+                                    <th>Coloader</th>
+                                    <th>ULD Number</th>
+                                </tr>
+                            </thead>
+                            <!--</table>-->
+                            <!--</div>-->
+                            <!--<div style="width:100%;overflow:auto; max-height:100px;">
+                            <table style="width:100%;">-->
+                            <tbody ng-repeat="(index, item) in Form1Details | unique : 'MAWBNo'">
+                                <tr>
+                                    <td><input type="checkbox" ng-model='isTrue' ng-true-value='{{item.MAWBNo}}' ng-change='getIndex(item.MAWBNo,isTrue)' /></td>
+                                    <td>{{$index + 1}}</td>
+                                    <td>{{item.MAWBNo}}</td>
+                                    <td>{{item.CourierCoName}}</td>
+                                    <td>{{item.NoOfPackages}}</td>
+                                    <td>{{item.Weight}}</td>
+                                    <td>{{item.ActualNoOfPackages}}</td>
+                                    <td>{{item.ActualWeight}}</td>
+                                    <td>{{item.Coloader}}</td>
+                                    <td>{{item.UldNo}}</td>
+                                    <td>{{item.CourierCoId}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+</form>

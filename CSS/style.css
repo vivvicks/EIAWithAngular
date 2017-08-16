@@ -1,0 +1,86 @@
+.setScroll {
+	overflow-y: scroll;
+}
+.hideitem {
+	display: none;
+}
+.elmValue {
+	display: none;
+}
+.selectbox {
+	 margin: 0px 0px -10px 0px; padding: 0px 0px 0px 0px; clear: both; float: left;
+}
+.selectbox ul {
+	 list-style: none; margin: 0px; padding: 8px 22px 6px 0px; vertical-align: top;
+}
+.select_wrap {
+	margin: 0px 3px 0px 0px; border: 1px  rgb(255, 255, 255); clear: both; color: Orange;
+}
+.selectboxopen {
+	 margin: 0px 0px -10px 0px; padding: 0px 0px 0px 0px; clear: both; float: left;
+}
+.selectboxopen ul {
+	 list-style: none; margin:0px 0 -2px 0px; padding: 8px 22px 6px 0px; height: 19px; vertical-align: top;
+}
+.selectbox ul li {
+	list-style: none; margin: 0px; padding: 0px; color: rgb(51, 51, 51);  font-family: arial,helvetica,san-serif; font-size: 12px; cursor: pointer;
+}
+.selectboxopen ul li {
+	list-style: none; margin: 0px 0 0 0 !important; padding: 0px !important;  float:left; color: rgb(51, 51, 51); font-family: arial,helvetica,san-serif; font-size: 12px; cursor: pointer;
+}
+.selectboxoptions_wrap {
+	margin: 0px; padding: 10px 0px 0px 0px; clear: both; display: none;
+}
+.selectboxoptions_radio {
+	background: rgb(230, 233, 237); list-style: none; margin: 0px; padding: 0px; clear: both;
+}
+.selectboxoptions_check {
+	background: rgb(230, 233, 237); list-style: none; margin: 0px; padding: 0px; clear: both;
+}
+.selectboxoptions_radio li {
+	list-style: none; margin: 2px 0px 0px 2px; padding: 3px 0px 2px 20px; color: rgb(51, 51, 51); font-family: arial,helvetica,san-serif; font-size: 12px; cursor: pointer;
+}
+.selectboxoptions_check li {
+	list-style: none; margin: 2px 0px 0px 2px; padding: 3px 0px 2px 20px; color: rgb(51, 51, 51); font-family: arial,helvetica,san-serif; font-size: 12px; cursor: pointer;
+}
+.hover {
+	background-color: rgb(230, 233, 237);
+}
+.selectboxoptions_check li {
+	background: url("Images/checkboxoff.png") no-repeat 3px 6px rgb(230, 233, 237);
+}
+.selectboxoptions_radio li {
+	background: url("Images/radiooff.png") no-repeat 3px 6px rgb(230, 233, 237);
+}
+.selectboxoptions_radio li.selected {
+	background: url("Images/selectradio.png") no-repeat 3px 6px rgb(242, 242, 242); display: block !important;
+}
+.selectboxoptions_radio li.selected_disable {
+	background: url("Images/selectradio_disable.png") no-repeat 3px 6px rgb(242, 242, 242); display: block !important;
+}
+.selectboxoptions_check li.selected {
+	background: url("Images/selectcheck.png") no-repeat 3px 6px rgb(242, 242, 242); display: block !important;
+}
+.selectboxoptions_check li.selected_disable {
+	background: url("Images/selectcheck_disable.png") no-repeat 3px 6px rgb(242, 242, 242); display: block !important;
+}
+.selectboxoptions_radio li.hover {
+	background-color: rgb(242, 242, 242);
+}
+.selectboxoptions_check li.hover {
+	background-color: rgb(242, 242, 242);
+}
+.selectboxfoot {
+	background: url("Images/selectfoot.png") no-repeat 0px 0px; padding: 0px 0px 0px 35px; float: left;
+}
+.selectboxfoot div {
+	background: url("Images/selectfoot.png") no-repeat right top; margin: 0px; padding: 7px 22px 10px 0px;
+}
+
+  .Text
+    {
+        font-family:Verdana;
+        font-weight:bold;
+    }
+ 
+

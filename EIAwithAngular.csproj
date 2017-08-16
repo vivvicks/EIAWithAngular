@@ -1,0 +1,1127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CDD7E7E9-A84D-4199-BCC8-51417DA465A6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EIAwithAngular</RootNamespace>
+    <AssemblyName>EIAwithAngular</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>12.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFrameworkExtras.EF6, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFrameworkExtras.EF6.1.0.0\lib\net45\EntityFrameworkExtras.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Json.4.0.20126.16343\lib\net40\System.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AngularJS\AngularController\Import.js" />
+    <Content Include="AngularJS\AngularController\LoginController.js" />
+    <Content Include="AngularJS\AngularController\MastersController.js" />
+    <Content Include="AngularJS\AngularController\profilecontroller.js" />
+    <Content Include="AngularJS\AngularController\RoleDetailController.js" />
+    <Content Include="AngularJS\AngularController\UserDetailController.js" />
+    <Content Include="AngularJS\AngularController\UserRoleMapController.js" />
+    <Content Include="AngularJS\Directive\Angudirective.js" />
+    <Content Include="AngularJS\Directive\DropdownFixDirective.js" />
+    <Content Include="AngularJS\Filters\Filters.js" />
+    <Content Include="AngularJS\jquery-ui.js" />
+    <Content Include="AngularJS\jquery.common.js" />
+    <Content Include="AngularJS\jquery.js" />
+    <Content Include="AngularJS\Modals\Modals.js" />
+    <Content Include="AngularJS\Module\App.js" />
+    <Content Include="AngularJS\OuterModule\angularPrint.js" />
+    <Content Include="AngularJS\OuterModule\app.js" />
+    <Content Include="AngularJS\OuterModule\igCharLimit.js" />
+    <Content Include="AngularJS\OuterModule\loading-bar.js" />
+    <Content Include="AngularJS\OuterModule\md5.js" />
+    <Content Include="AngularJS\OuterModule\ngprogress.js" />
+    <Content Include="AngularJS\OuterModule\trNgGrid.js" />
+    <Content Include="AngularJS\OuterModule\ui-bootstrap-tpls-2.1.4.js" />
+    <Content Include="AngularJS\Routing\UserMgmtRoutingModule.js" />
+    <Content Include="bootstrap\css\bootstrap-theme.css" />
+    <Content Include="bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="bootstrap\js\npm.js" />
+    <Content Include="Content\angucomplete-alt.css" />
+    <Content Include="Content\angularPrint.css" />
+    <Content Include="Content\app.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Gallery.css" />
+    <Content Include="Content\loading-bar.css" />
+    <Content Include="Content\ngProgress.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\structure.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\trNgGrid.min.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="CSS\jquery-ui.css" />
+    <Content Include="CSS\jquery-ui.structure.css" />
+    <Content Include="CSS\jquery-ui.theme.css" />
+    <Content Include="CSS\LoginMaster.css" />
+    <Content Include="CSS\MainMasterHMenu.css" />
+    <Content Include="CSS\Menu.css" />
+    <Content Include="CSS\page.css" />
+    <Content Include="CSS\style.css" />
+    <Content Include="CSS\styles.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\caret.png" />
+    <Content Include="Images\menu.png" />
+    <Content Include="Images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Images\ui-icons_222222_256x240.png" />
+    <Content Include="Images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Models\EIADB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EIADB.edmx</DependentUpon>
+      <LastGenOutput>EIADB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EIADB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EIADB.edmx</DependentUpon>
+      <LastGenOutput>EIADB.cs</LastGenOutput>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Angularlib\angular-animate.js" />
+    <Content Include="Angularlib\angular-animate.min.js" />
+    <Content Include="Angularlib\angular-aria.js" />
+    <Content Include="Angularlib\angular-aria.min.js" />
+    <Content Include="Angularlib\angular-cookies.js" />
+    <Content Include="Angularlib\angular-cookies.min.js" />
+    <Content Include="Angularlib\angular-csp.css" />
+    <Content Include="Angularlib\angular-loader.js" />
+    <Content Include="Angularlib\angular-loader.min.js" />
+    <Content Include="Angularlib\angular-message-format.js" />
+    <Content Include="Angularlib\angular-message-format.min.js" />
+    <Content Include="Angularlib\angular-messages.js" />
+    <Content Include="Angularlib\angular-messages.min.js" />
+    <Content Include="Angularlib\angular-parse-ext.js" />
+    <Content Include="Angularlib\angular-parse-ext.min.js" />
+    <Content Include="Angularlib\angular-resource.js" />
+    <Content Include="Angularlib\angular-resource.min.js" />
+    <Content Include="Angularlib\angular-route.js" />
+    <Content Include="Angularlib\angular-route.min.js" />
+    <Content Include="Angularlib\angular-sanitize.js" />
+    <Content Include="Angularlib\angular-sanitize.min.js" />
+    <Content Include="Angularlib\angular-scenario.js" />
+    <Content Include="Angularlib\angular-touch.js" />
+    <Content Include="Angularlib\angular-touch.min.js" />
+    <Content Include="Angularlib\angular.js" />
+    <Content Include="Angularlib\angular.min.js" />
+    <Content Include="Angularlib\angular.min.js.map" />
+    <Content Include="Scripts\angular-ui-router.js" />
+    <Content Include="Scripts\angular-ui-router.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
+    <Content Include="Scripts\errors.json" />
+    <Content Include="Angularlib\angular-touch.min.js.map" />
+    <Content Include="Angularlib\angular-sanitize.min.js.map" />
+    <Content Include="Angularlib\angular-route.min.js.map" />
+    <Content Include="Angularlib\angular-resource.min.js.map" />
+    <Content Include="Angularlib\angular-parse-ext.min.js.map" />
+    <Content Include="Angularlib\angular-messages.min.js.map" />
+    <Content Include="Angularlib\angular-message-format.min.js.map" />
+    <Content Include="Angularlib\angular-loader.min.js.map" />
+    <Content Include="Angularlib\angular-cookies.min.js.map" />
+    <Content Include="Angularlib\angular-aria.min.js.map" />
+    <Content Include="Angularlib\angular-animate.min.js.map" />
+    <Content Include="bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap.css.map" />
+    <Content Include="bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Angularlib\angular-mocks.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\knockout-3.4.0.debug.js" />
+    <Content Include="Scripts\knockout-3.4.0.js" />
+    <Content Include="Scripts\MenuScript.js" />
+    <Content Include="Templates\AddCourier.html" />
+    <Content Include="Templates\AddEditFlightdetail.html" />
+    <Content Include="Templates\AddProfile.html" />
+    <Content Include="Templates\AddRole.html" />
+    <Content Include="Templates\AddUser.html" />
+    <Content Include="Templates\CourierDetails.html" />
+    <Content Include="Templates\EditCourier.html" />
+    <Content Include="Templates\EditProfile.html" />
+    <Content Include="Templates\EditRole.html" />
+    <Content Include="Templates\EditUser.html" />
+    <Content Include="Templates\FlightDetails.html" />
+    <Content Include="Templates\Form1.html" />
+    <Content Include="Templates\Home.html" />
+    <Content Include="Templates\Profile.html" />
+    <Content Include="Templates\RoleDetail.html" />
+    <Content Include="Templates\RoleMap.html" />
+    <Content Include="Templates\UserDetail.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\version.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Form1Controller.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MastersDetailController.cs" />
+    <Compile Include="Controllers\PartialController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ProfileDataController.cs" />
+    <Compile Include="Controllers\RoleCRUDController.cs" />
+    <Compile Include="Controllers\RoleDataController.cs" />
+    <Compile Include="Controllers\UserCRUDController.cs" />
+    <Compile Include="Controllers\UserDetailsController.cs" />
+    <Compile Include="DAL\StoreProcedure.cs" />
+    <Compile Include="DAL\UserDefinedTables.cs" />
+    <Compile Include="Filters\AntiForgeryValidate.cs" />
+    <Compile Include="Filters\ErrorLoggerAttribute.cs" />
+    <Compile Include="Filters\ValidateSession.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ACC_Invoice.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ACC_InvoiceDtl.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ACC_Invoice_Hst.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ACC_Receipt.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ACC_ReceiptChrg.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ACC_ReceiptDtl.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\APP_LOGGER.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AUC_AuctionList.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AUC_AuctionListDtl.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AUC_AuctionSaleLot.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AUC_BOE.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AUC_BOEGroup.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AUC_SaleList.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EIADB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EIADB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EIADB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EIADB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EIADB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EXP_CSB1.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EXP_CSB1Dtl.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EXP_CSB1WeightAcceptance.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EXP_CSB1WeightAcceptanceDtl.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EXP_EntryGatePass.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EXP_OFLGatePass.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EXP_OFLGatePass_HST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EXP_ReleasePass.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fnSplit_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Form2Arrived.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GatePassIssued.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_APP_PARAM.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_LOV.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetACC_ReceiptHst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAuctionListDtl_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAuctionListNo_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAuctionStatus_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAUC_AuctionListHst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAUC_BOEGroup_Hst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAUC_BOE_Hst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetBidderDetails_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetBidderName_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetBOEGroupData_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetBOEGroupDetails_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetChequeDetails_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetClearBy_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCommonMaster_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCourierCompanyName_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCourierCoOSBal_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCourierEmployeeName_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCourierType_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCSB1Data_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetCSBAcceptanceDetails_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDataBasedOnMAWBNumber_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDetentionAmendDetails_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDetentionDetails_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDetentionForwardingDetails_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEntryGatePassData_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetExp_CSB1Hst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEXP_CSB1WeightAcceptanceHst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEXP_EntryGatePassHst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEXP_ReleasePass_Hst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetFinalcialYear_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetFinaltialYear_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetFlightDetails_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetFlightNumber_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetForm1CheckStatus_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetForm1Data_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetForm2Data_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetGatePassAmendData_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetGatePassData_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetGatePassDetainView_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetGatePassIssuedView_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetGatePassNo_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetImpDelayCharges_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetImp_Form1Hst_090220161_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetImp_Form1Hst_090220162_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetImp_Form1Hst_090220163_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetImp_Form1Hst_090220164_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetImp_Form1Hst_090220165_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetImp_Form1Hst_09022016_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetImp_Form1Hst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetImp_Form2Hst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetImp_GatePassHst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetIMP_OnHoldMemoHst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetOnHoldReason_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetOnHoldRecordDetails_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetOnHoldType_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetOnHoldWarehouseDetails_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPackageName_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetPaymentMode_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetReceiptChargeType_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetReceiptDetails_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetReceiptItemData_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetReceiptOHCheque_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSaleLotSelectedData_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSaleLotTr6_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSaleLot_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSelectauditData_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetSelectReportData_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetTMPType_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetUMONames_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMP_Form1.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMP_Form1Dtl.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMP_Form2.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMP_Form2Dtl.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMP_GatePass.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMP_GatePassDtl.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMP_OHForwarding.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMP_OHGPGatePass.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMP_OHGPGatePassHst_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMP_OHTGPGatePass.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMP_OnHoldMemo.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Insertlist_to_tbl_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InsertStringList_SPLIT_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSBM_HST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSBM_TBL.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Airline_Dtl.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Airline_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Airport_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_CheckList_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_CommonMaster_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Country_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_CourierEmp_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Courier_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Currency_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_DelayedChrg_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_DelayedChrg_MST_bak.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Flightmaster_HST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Flightmaster_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Global_Mapping_Hst.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Global_Mapping_Mst.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Modeofpayment_HST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Modeofpayment_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Terminal_HST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Terminal_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_UOMCategory_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_UOM_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_UploadFile_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_UserType_HST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_UserType_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Warehouse_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OnHoldInwardDetailsFwd_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OnHoldInwardDetails_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\proc_VRCFFetchMenu_Culture_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\proc_VRCFFetchMenu_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\proc_VSECVerifyUser_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\proformatest_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReportSearchOperator_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptAucInvoice_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptAuctionNotification1_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptAuctionSaleList_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptAuctionSaleLot_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptBillOfEntry_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptExpEntryGatePass_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptExpOFLGatePass_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptExportToTallyCashRcpt_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptExportToTallyInv_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptExportToTallyOHRcpt_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptExportToTallyWHRcpt_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptExpReleaseGatePass_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptExpWeightAcceptance_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptExpWeightAcceptance_rpt_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptFaciGatePassWH_rpt_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptFaciImportGatePassWH_rpt_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptImpGatePassAdv_rpt_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptImpGatePassOH_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptImpGatePassOH_rpt_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptImpGatePassTmp_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptImpGatePassWH_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptImpGatePassWH_rpt_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptImportInvoice_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptImportLoad_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptImpTGatePassOH_rpt_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptMemoDtl_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptPerforma_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptReceiptOHGatePass_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptReceiptWHGatePass_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptTr6Details_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RptTR6_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SEQ_EMPMASTER.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tempColumnDtl7.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VMSG_ALERT_DETAILS.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VMSG_ALERT_M.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VMSG_ErrorLog.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VMSG_GENERATOR.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VMSG_GENERATOR_TEMP.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VMSG_HISTORY_LOGS.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VMSG_RELATION.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VMSG_TEMPLATE_M.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VMSG_TIME_WINDOW_M.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VRCF_COLUMN_DTL.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VRCF_DEBUG_DTL.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VRCF_JSCRIPT_DTL.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VRCF_TABLE_DTL.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VRCF_XLSX_STYLE.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VSEC_APPLICATIONS.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VSEC_APPLICATION_AUDIT_TRAIL.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VSEC_FUNCTION_ACCESS.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VSEC_FUNCTION_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VSEC_GETUSERLIST_Result.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VSEC_LOGIN_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VSEC_PROFILE_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VSEC_QUESTION_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VSEC_ROLE_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VSEC_USER_ACTION_HST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VSEC_USER_MST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VSEC_USER_ROLE_MAP.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VWEDT_COURIEREMPMST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VWEDT_COURIERMST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VWEDT_FLIGHTMASTERMST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VWEDT_MODEPAYMST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VWEDT_USERTYPEMST.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VWEXP_OFLGatePass.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_AirlineMst.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_AlertDtl.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_UserDetail.cs">
+      <DependentUpon>EIADB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Extensions.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Repository\ILoginRepository.cs" />
+    <Compile Include="Repository\IMenu.cs" />
+    <Compile Include="Repository\IM_CommonMaster_MST.cs" />
+    <Compile Include="Repository\IProfile.cs" />
+    <Compile Include="Repository\IVSEC_ROLE_MST.cs" />
+    <Compile Include="Repository\IVW_UserDetail.cs" />
+    <Compile Include="Repository\LoginRepository.cs" />
+    <Compile Include="Repository\Menu.cs" />
+    <Compile Include="Repository\M_CommonMaster_MST_Repository.cs" />
+    <Compile Include="Repository\UnitOfWork .cs" />
+    <Compile Include="Repository\VSEC_PROFILE_MST_Repository.cs" />
+    <Compile Include="Repository\VSEC_ROLE_MST_Repository.cs" />
+    <Compile Include="Repository\VW_UserDetailRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <EntityDeploy Include="Models\EIADB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EIADB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EIADB.edmx.diagram">
+      <DependentUpon>EIADB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutMasterMenu.cshtml" />
+    <Content Include="Views\Shared\_MenuLayout.cshtml" />
+    <Content Include="Views\Partial\LoginUserDetail.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Profile\" />
+    <Folder Include="Views\RoleCRUD\" />
+    <Folder Include="Views\UserCRUD\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50588</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57377/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

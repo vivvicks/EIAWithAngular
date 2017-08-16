@@ -1,0 +1,297 @@
+﻿<form novalidate name="form1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <h3>User Creation</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        First Name
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="firstName" class="form-control" required name="firstName" ng-model="UserMgmt.FirstName" type="text" />
+                        <span style="color: red" ng-show="form1.firstName.$error.required && submitted">Enter FirstName </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Middle Name
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="middleName" class="form-control" ng-model="UserMgmt.MiddleName" type="text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Last Name
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="LastName" class="form-control" required name="LastName" ng-model="UserMgmt.LastName" type="text" />
+                        <span style="color: red" ng-show="form1.LastName.$error.required && submitted">Enter LastName </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Father Name
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="fatherName" class="form-control" required name="fatherName" ng-model="UserMgmt.fatherName" type="text" />
+                        <span style="color: red" ng-show="form1.fatherName.$error.required && submitted">Enter fatherName </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        DOB
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="DOB" mydatepicker ng-model="UserMgmt.DOB" ng-change="selectDate(UserMgmt.DOB)" char-limit="10" class="form-control" name="DOB" type="text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Gender
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <select ng-model="UserMgmt.selectedGender" class="form-control" name="Gendertype" id="Gendertype">
+                            <option name="select" id="0" value="">--Select--</option>
+                            <option ng-repeat="gen in Gender" ng-selected="UserMgmt.selectedGender == gen.id" value="{{gen.id}}">{{gen.name}}</option>
+                        </select>
+                        <span style="color: red" ng-show="form1.Gender.$error.required && submitted">Select Gender</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Contact No
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="contactno" class="form-control" required name="contactno" ng-model="UserMgmt.contactno" type="text" />
+                        <span style="color: red" ng-show="form1.contactno.$error.required && submitted">Enter Contact No </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Address1
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="Address1" class="form-control" required name="Address1" ng-model="UserMgmt.Address1" type="text" />
+                        <span style="color: red" ng-show="form1.Address1.$error.required && submitted">Enter Address</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Address2
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="Address2" class="form-control" ng-model="UserMgmt.Address2" type="text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Address3
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="Address3" class="form-control" ng-model="UserMgmt.Address3" type="text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        LoginID
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="LoginID" class="form-control" required name="LoginID" ng-model="UserMgmt.LoginID" type="text" />
+                        <span style="color: red" ng-show="form1.LoginID.$error.required && submitted">Enter LoginID</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        EmailID
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="EmailID" class="form-control" required name="EmailID" ng-model="UserMgmt.EmailID" type="text" />
+                        <span style="color: red" ng-show="form1.EmailID.$error.required && submitted">Enter EmailID</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Activated
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input id="Activated" class="form-control" ng-checked="UserMgmt.Activated" type="checkbox" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        ProfileID
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <select data-ng-model="UserMgmt.selectedprofileID" class="form-control" name="profiletype" id="profiletype">
+                            <option name="select" id="0" value="">--Select--</option>
+                            <option ng-repeat="pro in profileID" ng-selected="UserMgmt.selectedprofileID == pro.id" value="{{pro.id}}">{{pro.name}}</option>
+                        </select>
+                        <span style="color: red" ng-show="form1.profileID.$error.required && submitted">Select Profile</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Terminal Code
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <select  data-ng-model="UserMgmt.selectedTermicalCode" class="form-control" name="TermicalCodetype" id="TermicalCodetype">
+                            <option name="select" id="0" value="">--Select--</option>
+                            <option ng-repeat="terminal in TermicalCodes" ng-selected="UserMgmt.selectedTermicalCode == terminal.id" value="{{terminal.id}}">{{terminal.name}}</option>
+                        </select>
+                        <span style="color: red" ng-show="form1.TermicalCodes.$error.required && submitted">Select Termical Code</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                        Airline
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <select ng-model="UserMgmt.AirlineList" class="form-control" ng-options="s.AirlineName for s in AirlineList track by s.AirlineId" name="AirlineListtype" id="AirlineListtype">
+                            <option name="select" id="0" value="">--Select--</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-4">
+                    </div>
+                    <div class="col-xs-3 col-sm-4">
+                        <input type="submit" class="btn btn-success" ng-disabled="form1.$invalid" ng-click="UpdateUser(UserMgmt);submitted=true" value="Update User" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
