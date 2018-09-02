@@ -91,6 +91,11 @@
         templateUrl: '/Templates/Form1.html',
         controller: 'ImportController'
     })
+     .state('Form1Search', {
+         url: '/Form1Search',
+         templateUrl: '/Templates/Form1Search.html',
+         controller: 'FormISearchController'
+     })
 
     $urlRouterProvider.otherwise('/Login/Login');
 });

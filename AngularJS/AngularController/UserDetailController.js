@@ -9,6 +9,8 @@
         }
     };
 
+    $scope.UserMgmt = { loginid: "", username: "", ActiveNonActive: "", LockUnlock:"" };
+
     $scope.LockUnlock =
         [{
             id: '1',
@@ -71,7 +73,6 @@
     BindAirlineDropdown();
 
     $scope.sesson = "";
-    $scope.UserMgmt = {};
 
     //debugger;
     GetSession("TerminalCode");
@@ -143,6 +144,7 @@
         $scope.Message = "";
         
         if ($scope.IsFormValid) {
+            console.log(UserMgmt);
             var SearchUsers = UserMgmtService.SearchUsers(UserMgmt);
 
             SearchUsers.then(function (data, status, headers, config) {
@@ -572,43 +574,92 @@ UserMgmtapp.service("UserMgmtService", function ($http, $cookies) {
     };
 
     this.SearchUsers = function (UserMgmt) {
-        
+        console.log(UserMgmt.ActiveNonActive);
         var ActiveStaus;
         var LockStatus;
 
-        if (UserMgmt.username == undefined)
+
+        if (UserMgmt.loginid == "" && UserMgmt.username == "" && UserMgmt.ActiveNonActive == "" && UserMgmt.LockUnlock == "")
         {
-            UserMgmt.username = "";
+            ActiveStaus = ["A", "D"];
+            LockStatus = ["Yes", "No"];
         }
+        else
+        {
+            if (UserMgmt.ActiveNonActive != "") {
 
-        if (UserMgmt.ActiveNonActive == undefined) {
-            ActiveStaus = "";
-        }
-        else {
-            if (UserMgmt.ActiveNonActive.name == "Active") {
-                ActiveStaus = "Y";
+                if (UserMgmt.ActiveNonActive != null) {
+                    if (UserMgmt.ActiveNonActive.name == "Active") {
+                        ActiveStaus = "Y";
+                    }
+                }
+                else
+                    if (UserMgmt.ActiveNonActive != null) {
+                        if (UserMgmt.ActiveNonActive.name == "NonActive") {
+                            ActiveStaus = "N";
+                        }
+                    }
             }
             else {
-                ActiveStaus = "N";
+                ActiveStaus = "";
+            }
+
+            if (UserMgmt.LockUnlock != "") {
+                if (UserMgmt.LockUnlock != null){
+                    if (UserMgmt.LockUnlock.name == "Lock") {
+                        LockStatus = "No";
+                    }
+                }
+                else
+                    if (UserMgmt.LockUnlock != null) {
+                        if (UserMgmt.LockUnlock.name == "UnLock") {
+                            LockStatus = "Yes";
+                        }
+                    }
+            }
+            else {
+                LockStatus = "";
             }
         }
 
-        if (UserMgmt.LockUnlock == undefined) {
-            LockStatus = "";
-        }
-        else {
-            if (UserMgmt.LockUnlock.name == "Lock") {
-                LockStatus = "No";
-            }
-            else {
-                LockStatus = "Yes";
-            }
-        }
+        //if (UserMgmt.loginid == undefined)
+        //{
+        //    UserMgmt.loginid = "";
+        //}
+
+        //if (UserMgmt.username == undefined)
+        //{
+        //    UserMgmt.username = "";
+        //}
+
+        //if (UserMgmt.ActiveNonActive == undefined || UserMgmt.ActiveNonActive == "") {
+        //    ActiveStaus = ["A","D"];
+        //}
+        //else if(UserMgmt.ActiveNonActive != "") {
+        //    if (UserMgmt.ActiveNonActive.name == "Active") {
+        //        ActiveStaus = "Y";
+        //    }
+        //    else if (UserMgmt.ActiveNonActive.name == "NonActive") {
+        //        ActiveStaus = "N";
+        //    }
+        //}
+
+        //if (UserMgmt.LockUnlock == undefined || UserMgmt.LockUnlock == "") {
+        //    LockStatus = ["Yes", "No"];
+        //}
+        //else if (UserMgmt.LockUnlock != "") {
+        //    if (UserMgmt.LockUnlock.name == "Lock") {
+        //        LockStatus = "No";
+        //    }
+        //    else if (UserMgmt.LockUnlock.name == "UnLock") {
+        //        LockStatus = "Yes";
+        //    }
+        //}
 
         var response =
            $http({
                method: "GET",
-               url: "/api/UserDetails?LoginID=" + UserMgmt.loginid + "&UserName=" + UserMgmt.username + "&ActiveStaus=" + ActiveStaus + "&LockStatus=" + LockStatus,
+               url: "/api/UserDetails?ActiveStaus=" + ActiveStaus + "&LockStatus=" + LockStatus + "&LoginID=" + UserMgmt.loginid + "&UserName=" + UserMgmt.username  ,
                headers: { 'RequestVerificationToken': $cookies.get('Token') }
            });
         return response;

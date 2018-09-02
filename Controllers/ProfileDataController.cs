@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace EIAwithAngular.Controllers
 {
-    //[AntiForgeryValidate]
+    [AntiForgeryValidate]
     public class ProfileDataController : ApiController
     {
          IProfile _IVSEC_PROFILE_MST;

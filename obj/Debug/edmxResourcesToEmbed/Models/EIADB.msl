@@ -2329,7 +2329,6 @@
     <EntitySetMapping Name="VW_UserDetail">
       <EntityTypeMapping TypeName="EIA_DEVModel.VW_UserDetail">
         <MappingFragment StoreEntitySet="VW_UserDetail">
-          <ScalarProperty Name="checkedornot" ColumnName="checkedornot" />
           <ScalarProperty Name="UserMstID" ColumnName="UserMstID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
@@ -4925,35 +4924,5 @@
     <FunctionImportMapping FunctionImportName="UpdateInwardDetails" FunctionName="EIA_DEVModel.Store.UpdateInwardDetails" />
     <FunctionImportMapping FunctionImportName="UpdateOnHoldMemoDetails" FunctionName="EIA_DEVModel.Store.UpdateOnHoldMemoDetails" />
     <FunctionImportMapping FunctionImportName="UpdateReceiptData" FunctionName="EIA_DEVModel.Store.UpdateReceiptData" />
-    <EntitySetMapping Name="VWEDT_COURIERMST">
-      <EntityTypeMapping TypeName="IsTypeOf(EIA_DEVModel.VWEDT_COURIERMST)">
-        <MappingFragment StoreEntitySet="VWEDT_COURIERMST">
-          <ScalarProperty Name="LastUpDtOn" ColumnName="LastUpDtOn" />
-          <ScalarProperty Name="LastUpDtBy" ColumnName="LastUpDtBy" />
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="MC_Status" ColumnName="MC_Status" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="CourierCoRegistrationExpiryDt" ColumnName="CourierCoRegistrationExpiryDt" />
-          <ScalarProperty Name="TerminalCode" ColumnName="TerminalCode" />
-          <ScalarProperty Name="MemberTypeId" ColumnName="MemberTypeId" />
-          <ScalarProperty Name="CourierType" ColumnName="CourierType" />
-          <ScalarProperty Name="CourierCoPinCode" ColumnName="CourierCoPinCode" />
-          <ScalarProperty Name="CourierCoCity" ColumnName="CourierCoCity" />
-          <ScalarProperty Name="CourierCoState" ColumnName="CourierCoState" />
-          <ScalarProperty Name="CourierCoAddr2" ColumnName="CourierCoAddr2" />
-          <ScalarProperty Name="CourierCoAddr1" ColumnName="CourierCoAddr1" />
-          <ScalarProperty Name="CourierContact" ColumnName="CourierContact" />
-          <ScalarProperty Name="CourierEmail" ColumnName="CourierEmail" />
-          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
-          <ScalarProperty Name="CourierCoMigratedName" ColumnName="CourierCoMigratedName" />
-          <ScalarProperty Name="CourierCoTallyName" ColumnName="CourierCoTallyName" />
-          <ScalarProperty Name="CourierCoName" ColumnName="CourierCoName" />
-          <ScalarProperty Name="CourierCoRegistrationNumber" ColumnName="CourierCoRegistrationNumber" />
-          <ScalarProperty Name="CourierCoCode" ColumnName="CourierCoCode" />
-          <ScalarProperty Name="CourierCoId" ColumnName="CourierCoId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

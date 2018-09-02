@@ -127,15 +127,15 @@ namespace EIAwithAngular.Repository
             }
         }
 
-        public IEnumerable<VW_UserDetail> SearchUsers(string LoginID, string UserName, string ActiveStaus, string LockStatus)
+        public IEnumerable<VW_UserDetail> SearchUsers(string LoginID, string UserName, string[] ActiveStaus, string[] LockStatus)
         {
             try
             {
                 var UsersList = from Users in _db.VW_UserDetail
                                 where Users.LoginID.Contains(LoginID) 
-                                        || Users.Name.Contains(UserName) 
-                                            || Users.ActiveStatus.Contains(ActiveStaus) 
-                                              || Users.LockStatus.Contains(LockStatus)
+                                        || Users.Name.Contains(UserName)
+                                            || ActiveStaus.Contains(Users.ActiveStatus)
+                                              || LockStatus.Contains(Users.LockStatus)
                                 select Users;
 
                 return UsersList.ToList();

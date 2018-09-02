@@ -2378,3 +2378,41 @@ Stack:	   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
    at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass29.<BeginInvokeAction>b__1b()
    at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+----------
+8/31/2017 10:17:18 AM
+Source:	System.Web.Mvc
+Target:	System.Web.Mvc.ViewEngineResult FindView(System.Web.Mvc.ControllerContext)
+Type:	InvalidOperationException
+Message:	The view 'Error' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Home/Error.aspx
+~/Views/Home/Error.ascx
+~/Views/Shared/Error.aspx
+~/Views/Shared/Error.ascx
+~/Views/Home/Error.cshtml
+~/Views/Home/Error.vbhtml
+~/Views/Shared/Error.cshtml
+~/Views/Shared/Error.vbhtml
+Stack:	   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass29.<BeginInvokeAction>b__1b()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+----------
+10/3/2017 10:56:53 AM
+Source:	System.Web.Mvc
+Target:	System.Web.Mvc.ViewEngineResult FindView(System.Web.Mvc.ControllerContext)
+Type:	InvalidOperationException
+Message:	The view 'Error' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Home/Error.aspx
+~/Views/Home/Error.ascx
+~/Views/Shared/Error.aspx
+~/Views/Shared/Error.ascx
+~/Views/Home/Error.cshtml
+~/Views/Home/Error.vbhtml
+~/Views/Shared/Error.cshtml
+~/Views/Shared/Error.vbhtml
+Stack:	   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass29.<BeginInvokeAction>b__1b()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)

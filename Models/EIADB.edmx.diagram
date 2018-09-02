@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="976852ca969f43f4bde250739435975c" Name="Diagram1" ZoomLevel="82">
+      <Diagram DiagramId="976852ca969f43f4bde250739435975c" Name="Diagram1" ZoomLevel="79">
         <EntityTypeShape EntityType="EIA_DEVModel.ACC_Invoice" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EIA_DEVModel.ACC_InvoiceDtl" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EIA_DEVModel.ACC_Receipt" Width="1.5" PointX="11.75" PointY="11.75" IsExpanded="true" />
@@ -98,7 +98,7 @@
         <EntityTypeShape EntityType="EIA_DEVModel.vw_AirlineMst" Width="1.5" PointX="33.75" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EIA_DEVModel.vw_AlertDtl" Width="1.5" PointX="33.75" PointY="18.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EIA_DEVModel.VW_UserDetail" Width="1.5" PointX="33.75" PointY="23.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EIA_DEVModel.VWEDT_COURIEREMPMST" Width="1.5" PointX="24.125" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EIA_DEVModel.VWEDT_COURIEREMPMST" Width="1.875" PointX="24.125" PointY="33.625" IsExpanded="true" />
         <EntityTypeShape EntityType="EIA_DEVModel.VWEDT_FLIGHTMASTERMST" Width="2.125" PointX="33.75" PointY="31.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EIA_DEVModel.VWEDT_MODEPAYMST" Width="1.5" PointX="35.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EIA_DEVModel.VWEDT_USERTYPEMST" Width="1.5" PointX="35.75" PointY="4.75" IsExpanded="true" />
@@ -116,7 +116,6 @@
         <AssociationConnector Association="EIA_DEVModel.FK_VSEC_LOGIN_MST_VSEC_USER_MST" ManuallyRouted="false" />
         <AssociationConnector Association="EIA_DEVModel.FK_VSEC_USER_ROLE_MAP_VSEC_LOGIN_MST" ManuallyRouted="false" />
         <AssociationConnector Association="EIA_DEVModel.FK_VSEC_USER_ROLE_MAP_VSEC_ROLE_MST" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="EIA_DEVModel.VWEDT_COURIERMST" Width="2.875" PointX="20.375" PointY="35.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

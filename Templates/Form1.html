@@ -209,6 +209,7 @@
                                 </div>
                                 <div class="col-xs-3 col-sm-3">
                                     <input id="txtIGMNo" name="IGMNo" type="text" class="form-control" ng-model="form1.IgmNumber" />
+                                    <span style="color: red" ng-show="formImport.IgmNumber.$error.required && submitted">Enter IGM nos</span>
                                 </div>
                                 <div class="col-xs-3 col-sm-3">
                                     IGM Date
@@ -409,7 +410,9 @@
                 <div class="col-xs-12 col-sm-12" style="height: 10px; align-items: center">
                     <div class="row">
                         <div class="col-xs-3 col-sm-4">
-                            <a ng-click="open('lg')" ng-disabled="formImport.MAWBNo.$valid">Check IGM Status</a>
+                            <span ng-show="(!form1.MAWBNo == '') && (!form1.IgmNumber == '') ? true : false">
+                                <a ng-click="open('lg')">Check IGM Status</a>
+                            </span>
                             <input type="submit" class="btn btn-success" ng-disabled="formImport.$invalid" ng-click="addItem(form1);submitted=true" value="add" />
                             <input type="submit" class="btn btn-success" ng-disabled="!disable" ng-click="modifyItem(Form1Details)" value=" modify" />
                             <input type="submit" class="btn btn-success" ng-disabled="!disable" ng-click="deleteItem(Form1Details)" value=" delete" />

@@ -19,6 +19,8 @@ namespace EIAwithAngular.Repository
         private GenericRepository<M_Flightmaster_MST> m_flightmaster_mst;
         private GenericRepository<M_Airport_MST> m_airport_mst;
         private GenericRepository<GetFlightNumber_Result> getflightnumber;
+        private GenericRepository<IMP_Form1> imp_form1;
+        private GenericRepository<IMP_Form1Dtl> imp_form1dtl;
 
         public GenericRepository<M_CommonMaster_MST> M_CommonMaster_MST_Repository
         {
@@ -78,6 +80,30 @@ namespace EIAwithAngular.Repository
                     this.m_flightmaster_mst = new GenericRepository<M_Flightmaster_MST>(context);
                 }
                 return m_flightmaster_mst;
+            }
+        }
+
+        public GenericRepository<IMP_Form1Dtl> IMP_Form1Dtl_Repository
+        {
+            get
+            {
+                if (this.imp_form1dtl == null)
+                {
+                    this.imp_form1dtl = new GenericRepository<IMP_Form1Dtl>(context);
+                }
+                return imp_form1dtl;
+            }
+        }
+
+        public GenericRepository<IMP_Form1> IMP_Form1_Repository
+        {
+            get
+            {
+                if (this.imp_form1 == null)
+                {
+                    this.imp_form1 = new GenericRepository<IMP_Form1>(context);
+                }
+                return imp_form1;
             }
         }
 

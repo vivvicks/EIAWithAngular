@@ -1,0 +1,145 @@
+﻿<form novalidate name="form1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <h3>Import -> Form I Search </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Form I Number
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="FormINumber" class="form-control" type="text" ng-model="form1Search.FormINumber" />
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Express Company Name 
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="txtCourierCompanyName" type="text" class="form-control" ng-model="form1Search.courierList" required />
+                        <div id="divCourierCompanyName" style="position: absolute;">
+                            <select id="ddlCourierCompanyName" name="ddlCourierCompanyName" class="ddlCourierCompanyName"
+                                    style="position: relative; top: 0px; left: 0px; z-index: 1;height:100px;" size="4"
+                                    ng-model="form1Search.courierList"
+                                    ng-options="courier.CourierCoName for courier in courierList track by courier.CourierCoId">
+                                <option value="">--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        Flight Number 
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="txtFlightNumber" class="form-control" type="text" ng-model="form1Search.FlightNumber" required />                       
+                        <div id="divFlightNumber" style="position: absolute;">
+                            <select id="ddlFlightNumber" name="FlightNumber" class="ddlFlightNumber"
+                                    style="position: relative; top: 0px; left: 0px; z-index: 1;height:100px;" size="4"
+                                    ng-model="form1Search.FlightList"
+                                    ng-options="Flight.FlightNumber for Flight in FlightList track by Flight.FlightNumber">
+                                <option value="">--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        Flight Date 
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input mydatepicker id="txtFlightDate" class="form-control" type="text" ng-model="form1Search.FlightDate" ng-change="selectDate(form1.FlightDate)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        IGM Reference Number 
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="IGMReferenceNumber" class="form-control" type="text" ng-model="form1Search.IGMReferenceNumber" />
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        MAWB Number 
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input id="MAWBNumber" class="form-control" type="text" ng-model="form1Search.MAWBNumber" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3">
+                        
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                    </div>
+                    <div class="col-xs-3 col-sm-3">
+                        <input type="button" class="btn btn-success" value="Export to excel" />
+                        <input type="button" class="btn btn-success" value="Search" ng-click="SearchFormIData(form1Search)" />
+                        <input type="button" class="btn btn-success" value="Clear" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="height:10px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="container">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Sr Number</th>
+                                <th>Form I number</th>
+                                <th>IGM referance Number</th>
+                                <th>Flight number</th>
+                                <th>Flight date</th>
+                                <th>MAWB number</th>
+                                <th>Audit view</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="List in SearchFormI.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+                            <tr>
+                                <td>{{$index + 1}}</td>
+                                <td><a>{{List.Form1No}}</a></td>
+                                <td>{{List.IGMNumber}}</td>
+                                <td>{{List.FlightNumber}}</td>
+                                <td>{{List.FlightDate}}</td>
+                                <td>{{List.MAWBNumber}}</td>                              
+                                <td>{{List.CourierContact}}</td>
+                                <td><a>Audit view</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" force-ellipses="true"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

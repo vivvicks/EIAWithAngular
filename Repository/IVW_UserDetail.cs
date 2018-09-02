@@ -13,7 +13,7 @@ namespace EIAwithAngular.Repository
     {
         IEnumerable<M_Airline_MST> AirlineList();
         IEnumerable<VW_UserDetail> LoadUsers(String TermicalCode);
-        IEnumerable<VW_UserDetail> SearchUsers(String LoginID,String UserName, String ActiveStaus, String LockStatus);
+        IEnumerable<VW_UserDetail> SearchUsers(String LoginID,String UserName, String[] ActiveStaus, String[] LockStatus);
         void CreatUser(VW_UserDetail vw_userdetail);
         void UpdateUser(VW_UserDetail vw_userdetail);
         VW_UserDetail GetUserByID(int ID);

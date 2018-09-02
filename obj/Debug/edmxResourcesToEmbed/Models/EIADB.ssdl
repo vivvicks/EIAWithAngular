@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="EIA_DEVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="EIA_DEVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ACC_Invoice">
     <Key>
       <PropertyRef Name="InvoiceId" />
@@ -2338,7 +2338,6 @@ warning 6002: The table/view 'EIA_DEV.dbo.VW_UserDetail' does not have a primary
     <Property Name="ApplicationName" Type="varchar" MaxLength="12" Nullable="false" />
     <Property Name="RPassword" Type="varchar" MaxLength="13" Nullable="false" />
     <Property Name="MCAddress" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="checkedornot" Type="bit" />
     <Property Name="LockStatus" Type="varchar" MaxLength="3" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="152" Nullable="false" />
     <Property Name="MC_Status" Type="char" MaxLength="1" />
@@ -2365,36 +2364,32 @@ warning 6002: The table/view 'EIA_DEV.dbo.VWEDT_COURIEREMPMST' does not have a p
     <Property Name="LastUpDtOn" Type="datetime" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6002: The table/view 'EIA_DEV.dbo.VWEDT_COURIERMST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="VWEDT_COURIERMST">
-    <Key>
-      <PropertyRef Name="CourierCoId" />
-    </Key>
-    <Property Name="CourierCoId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="CourierCoCode" Type="varchar" MaxLength="10" />
-    <Property Name="CourierCoRegistrationNumber" Type="varchar" MaxLength="50" />
-    <Property Name="CourierCoName" Type="varchar" MaxLength="200" />
-    <Property Name="CourierCoTallyName" Type="varchar" MaxLength="200" />
-    <Property Name="CourierCoMigratedName" Type="varchar" MaxLength="200" />
-    <Property Name="ContactPerson" Type="varchar" MaxLength="200" />
-    <Property Name="CourierEmail" Type="varchar" MaxLength="200" />
-    <Property Name="CourierContact" Type="varchar" MaxLength="200" />
-    <Property Name="CourierCoAddr1" Type="varchar" MaxLength="200" />
-    <Property Name="CourierCoAddr2" Type="varchar" MaxLength="200" />
-    <Property Name="CourierCoState" Type="varchar" MaxLength="50" />
-    <Property Name="CourierCoCity" Type="varchar" MaxLength="50" />
-    <Property Name="CourierCoPinCode" Type="bigint" />
-    <Property Name="CourierType" Type="varchar" MaxLength="8000" />
-    <Property Name="MemberTypeId" Type="varchar" MaxLength="8000" />
-    <Property Name="TerminalCode" Type="varchar" MaxLength="10" />
-    <Property Name="CourierCoRegistrationExpiryDt" Type="date" />
-    <Property Name="Status" Type="char" MaxLength="1" />
-    <Property Name="MC_Status" Type="char" MaxLength="1" />
-    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
-    <Property Name="CreatedOn" Type="datetime" />
-    <Property Name="LastUpDtBy" Type="varchar" MaxLength="50" />
-    <Property Name="LastUpDtOn" Type="datetime" />
-  </EntityType>
+warning 6013: The table/view 'EIA_DEV.dbo.VWEDT_COURIERMST' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VWEDT_COURIERMST">
+          <Property Name="CourierCoId" Type="bigint" />
+          <Property Name="CourierCoCode" Type="varchar" MaxLength="10" />
+          <Property Name="CourierCoRegistrationNumber" Type="varchar" MaxLength="50" />
+          <Property Name="CourierCoName" Type="varchar" MaxLength="200" />
+          <Property Name="CourierCoTallyName" Type="varchar" MaxLength="200" />
+          <Property Name="CourierCoMigratedName" Type="varchar" MaxLength="200" />
+          <Property Name="ContactPerson" Type="varchar" MaxLength="200" />
+          <Property Name="CourierEmail" Type="varchar" MaxLength="200" />
+          <Property Name="CourierContact" Type="varchar" MaxLength="200" />
+          <Property Name="CourierCoAddr1" Type="varchar" MaxLength="200" />
+          <Property Name="CourierCoAddr2" Type="varchar" MaxLength="200" />
+          <Property Name="CourierCoState" Type="varchar" MaxLength="50" />
+          <Property Name="CourierCoCity" Type="varchar" MaxLength="50" />
+          <Property Name="CourierCoPinCode" Type="bigint" />
+          <Property Name="CourierType" Type="int" />
+          <Property Name="MemberTypeId" Type="int" />
+          <Property Name="TerminalCode" Type="varchar" MaxLength="10" />
+          <Property Name="Status" Type="char" MaxLength="1" />
+          <Property Name="MC_Status" Type="char" MaxLength="1" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="LastUpDtBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpDtOn" Type="datetime" />
+        </EntityType>-->
   <!--Errors Found During Generation:
 warning 6002: The table/view 'EIA_DEV.dbo.VWEDT_FLIGHTMASTERMST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VWEDT_FLIGHTMASTERMST">
@@ -2408,10 +2403,10 @@ warning 6002: The table/view 'EIA_DEV.dbo.VWEDT_FLIGHTMASTERMST' does not have a
     <Property Name="AirportofDestination" Type="varchar" MaxLength="50" />
     <Property Name="ETD" Type="int" />
     <Property Name="ETA" Type="int" />
-    <Property Name="FlightType" Type="varchar" MaxLength="10" />
     <Property Name="TerminalCode" Type="varchar" MaxLength="10" />
     <Property Name="Status" Type="char" MaxLength="1" />
     <Property Name="MC_Status" Type="char" MaxLength="1" />
+    <Property Name="FlightType" Type="varchar" MaxLength="10" />
     <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
     <Property Name="CreatedOn" Type="datetime" />
     <Property Name="LastUpDtBy" Type="varchar" MaxLength="50" />
@@ -4758,7 +4753,6 @@ warning 6002: The table/view 'EIA_DEV.dbo.VWEXP_OFLGatePass' does not have a pri
     [VW_UserDetail].[ApplicationName] AS [ApplicationName], 
     [VW_UserDetail].[RPassword] AS [RPassword], 
     [VW_UserDetail].[MCAddress] AS [MCAddress], 
-    [VW_UserDetail].[checkedornot] AS [checkedornot], 
     [VW_UserDetail].[LockStatus] AS [LockStatus], 
     [VW_UserDetail].[Name] AS [Name], 
     [VW_UserDetail].[MC_Status] AS [MC_Status], 
@@ -4782,34 +4776,6 @@ warning 6002: The table/view 'EIA_DEV.dbo.VWEXP_OFLGatePass' does not have a pri
     [VWEDT_COURIEREMPMST].[LastUpDtOn] AS [LastUpDtOn]
     FROM [dbo].[VWEDT_COURIEREMPMST] AS [VWEDT_COURIEREMPMST]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="VWEDT_COURIERMST" EntityType="Self.VWEDT_COURIERMST" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [VWEDT_COURIERMST].[CourierCoId] AS [CourierCoId], 
-    [VWEDT_COURIERMST].[CourierCoCode] AS [CourierCoCode], 
-    [VWEDT_COURIERMST].[CourierCoRegistrationNumber] AS [CourierCoRegistrationNumber], 
-    [VWEDT_COURIERMST].[CourierCoName] AS [CourierCoName], 
-    [VWEDT_COURIERMST].[CourierCoTallyName] AS [CourierCoTallyName], 
-    [VWEDT_COURIERMST].[CourierCoMigratedName] AS [CourierCoMigratedName], 
-    [VWEDT_COURIERMST].[ContactPerson] AS [ContactPerson], 
-    [VWEDT_COURIERMST].[CourierEmail] AS [CourierEmail], 
-    [VWEDT_COURIERMST].[CourierContact] AS [CourierContact], 
-    [VWEDT_COURIERMST].[CourierCoAddr1] AS [CourierCoAddr1], 
-    [VWEDT_COURIERMST].[CourierCoAddr2] AS [CourierCoAddr2], 
-    [VWEDT_COURIERMST].[CourierCoState] AS [CourierCoState], 
-    [VWEDT_COURIERMST].[CourierCoCity] AS [CourierCoCity], 
-    [VWEDT_COURIERMST].[CourierCoPinCode] AS [CourierCoPinCode], 
-    [VWEDT_COURIERMST].[CourierType] AS [CourierType], 
-    [VWEDT_COURIERMST].[MemberTypeId] AS [MemberTypeId], 
-    [VWEDT_COURIERMST].[TerminalCode] AS [TerminalCode], 
-    [VWEDT_COURIERMST].[CourierCoRegistrationExpiryDt] AS [CourierCoRegistrationExpiryDt], 
-    [VWEDT_COURIERMST].[Status] AS [Status], 
-    [VWEDT_COURIERMST].[MC_Status] AS [MC_Status], 
-    [VWEDT_COURIERMST].[CreatedBy] AS [CreatedBy], 
-    [VWEDT_COURIERMST].[CreatedOn] AS [CreatedOn], 
-    [VWEDT_COURIERMST].[LastUpDtBy] AS [LastUpDtBy], 
-    [VWEDT_COURIERMST].[LastUpDtOn] AS [LastUpDtOn]
-    FROM [dbo].[VWEDT_COURIERMST] AS [VWEDT_COURIERMST]</DefiningQuery>
-    </EntitySet>
     <EntitySet Name="VWEDT_FLIGHTMASTERMST" EntityType="Self.VWEDT_FLIGHTMASTERMST" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [VWEDT_FLIGHTMASTERMST].[FlightNumber] AS [FlightNumber], 
@@ -4819,10 +4785,10 @@ warning 6002: The table/view 'EIA_DEV.dbo.VWEXP_OFLGatePass' does not have a pri
     [VWEDT_FLIGHTMASTERMST].[AirportofDestination] AS [AirportofDestination], 
     [VWEDT_FLIGHTMASTERMST].[ETD] AS [ETD], 
     [VWEDT_FLIGHTMASTERMST].[ETA] AS [ETA], 
-    [VWEDT_FLIGHTMASTERMST].[FlightType] AS [FlightType], 
     [VWEDT_FLIGHTMASTERMST].[TerminalCode] AS [TerminalCode], 
     [VWEDT_FLIGHTMASTERMST].[Status] AS [Status], 
     [VWEDT_FLIGHTMASTERMST].[MC_Status] AS [MC_Status], 
+    [VWEDT_FLIGHTMASTERMST].[FlightType] AS [FlightType], 
     [VWEDT_FLIGHTMASTERMST].[CreatedBy] AS [CreatedBy], 
     [VWEDT_FLIGHTMASTERMST].[CreatedOn] AS [CreatedOn], 
     [VWEDT_FLIGHTMASTERMST].[LastUpDtBy] AS [LastUpDtBy], 

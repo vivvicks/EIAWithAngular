@@ -2330,7 +2330,6 @@
     <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="checkedornot" Type="Boolean" />
   </EntityType>
   <EntityType Name="VWEDT_COURIEREMPMST">
     <Key>

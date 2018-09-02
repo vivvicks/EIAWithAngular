@@ -354,6 +354,7 @@
     <Content Include="Templates\EditUser.html" />
     <Content Include="Templates\FlightDetails.html" />
     <Content Include="Templates\Form1.html" />
+    <Content Include="Templates\Form1Search.html" />
     <Content Include="Templates\Home.html" />
     <Content Include="Templates\Profile.html" />
     <Content Include="Templates\RoleDetail.html" />

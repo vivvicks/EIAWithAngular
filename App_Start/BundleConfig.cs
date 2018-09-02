@@ -40,7 +40,7 @@ namespace EIAwithAngular.App_Start
                                     "~/AngularJS/OuterModule/igCharLimit.js",
                                     "~/AngularJS/OuterModule/angularPrint.js",
                                     "~/AngularJS/OuterModule/trNgGrid.js",
-                                    "~/AngularJS/OuterModule/ui-bootstrap-tpls-2.1.4.js",
+                                    "~/AngularJS/OuterModule/ui-bootstrap-tpls-2.5.0.js",
                                     "~/AngularJS/Directive/Angudirective.js",
                                     "~/AngularJS/OuterModule/md5.js",
                                     "~/AngularJS/AngularController/RoleDetailController.js",

@@ -9,7 +9,7 @@
         }
     };
 
-    $scope.form1 = { Form1Details: [], TerminalCode: "", UserName:""};
+    $scope.form1 = { Form1Details: [], TerminalCode: "", UserName:"", MAWBNo:"", IgmNumber:""};
     $scope.Form1Details = [];
     $scope.IGMDetails = [];
     var arr = [];
@@ -17,6 +17,7 @@
     $scope.disable = false;   
     $scope.disableSave = false;
     $scope.disableAdd = true;
+    //console.log($scope.form1.MAWBNo);
   
     $scope.$watch("formImport.$valid", function (isValid) {
         $scope.IsFormValid = isValid;
@@ -337,13 +338,7 @@
                     }
                 }
             });
-
-            modalInstance.result.then(function (selectedItem) {
-            }, function () {
-            });
-
         }, function () {
-
         });
     };
 });
@@ -389,6 +384,16 @@ UserMgmtapp.service("ImportService", function ($http, $cookies) {
         return response;
     }
 
+    this.SearchFormI = function (Form1Number, IGMNumber, FlightNumber, FlightDate, CourierCompanyId, MAWBNumber, TerminalCode, FinancialYear) {
+        //console.log("hi");
+        var response =
+            $http({
+                method: "GET",
+                url: "/api/Form1?TerminalCode=" + TerminalCode + "&FinancialYear=" + FinancialYear + "&Form1Number=" + Form1Number + "&IGMNumber=" + IGMNumber + "&FlightNumber=" + FlightNumber + "&FlightDate=" + FlightDate + "&CourierCompanyId=" + CourierCompanyId + "&MAWBNumber=" + MAWBNumber,
+                headers: { 'RequestVerificationToken': $cookies.get('Token') }
+            });
+        return response;
+    }
 });
 UserMgmtapp.factory('Form1CreateService', function ($http, $q, $cookies) {
 
@@ -427,3 +432,231 @@ UserMgmtapp.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance,
     };
 
 });
+UserMgmtapp.controller("FormISearchController", function ($scope, $http, $uibModal, ImportService, UserMgmtService, $cookies, $location, $window, $filter, cfpLoadingBar) {
+    //{ FormINumber: "", courierList: "", FlightNumber: "", FlightDate: "", IGMReferenceNumber: "", MAWBNumber: "", TerminalCode: "" }
+    $scope.form1Search = [];
+    $scope.IsFormValid = true;
+
+    var favoriteCookie = $cookies.get('Token');
+    var config =
+    {
+        headers:
+        {
+            'RequestVerificationToken': favoriteCookie
+        }
+    };
+
+    $scope.$watch("formImport.$valid", function (isValid) {
+        $scope.IsFormValid = isValid;
+    });
+
+    $("#divCourierCompanyName").hide();
+    //Define variable and assign text object and dropdown object to be used in binding
+    var $txtCourierCo = $('input[id$=txtCourierCompanyName]');
+    var $ddlCourierCo = $('select[id$=ddlCourierCompanyName]');
+    var $itemsCourierCo = $('select[id$=ddlCourierCompanyName] option');
+
+    $("#divFlightNumber").hide();
+    //Define variable and assign text object and dropdown object to be used in binding
+    var $txtFlightNo = $('input[id$=txtFlightNumber]');
+    var $ddlFlightNo = $('select[id$=ddlFlightNumber]');
+    var $itemsFlightNo = $('select[id$=ddlFlightNumber] option');
+
+    $(document).click(function (event) {
+        //  debugger;
+        //console.log("click");
+        var v = event.target.id;
+        //console.log(v);
+        //console.log(event.target.parentElement.id);
+
+        if (v === "") {
+            v = event.target.parentElement.id;
+        }
+
+        if (v === 'txtFlightNumber') {
+            $("#divFlightNumber").show();
+            $("#divCourierCompanyName").hide();
+            return;
+        }
+
+        if (v === 'ddlFlightNumber') {
+            //console.log("Hi1");
+            //   debugger;
+            selectAndHide('txtFlightNumber', 'ddlFlightNumber', 'divFlightNumber');
+            //write code for selectedindex change
+            //console.log("Hi2");
+            //getFlightDetails();
+            //$('#ctl00_CHDHMenu_txtDateOfArrival').focus();
+            //document.getElementById("txtDateOfArrival").focus();
+            return;
+        }
+
+        if (v === 'txtCourierCompanyName') {
+            $("#divCourierCompanyName").show();
+            $("#divFlightNumber").hide();
+            return;
+        }
+
+        if (v === 'ddlCourierCompanyName') {
+            selectAndHide('txtCourierCompanyName', 'ddlCourierCompanyName', 'divCourierCompanyName');
+            //$("#ctl00_CHDHMenu_txtNumberOfPackages").focus(); 
+            //document.getElementById("txtNumberOfPackages").focus();
+            return;
+        }
+
+        $("#divFlightNumber").hide();
+        $("#divCourierCompanyName").hide();
+    });
+
+    $(document).keyup(function (event) {
+        //console.log("keyup");
+        var v = event.target.id;
+
+        if (v === "") {
+            v = event.target.parentElement.id;
+        }
+
+        //console.log(v);
+        var keyCode = event.keyCode;
+        //console.log(keyCode);
+        if (v === 'txtFlightNumber') {
+            searchDdl($txtFlightNo, $ddlFlightNo, $itemsFlightNo, 'divFlightNumber');
+            $("#divCourierCompanyName").hide();
+            return;
+        }
+
+        if (v === 'ddlFlightNumber') {
+            if (event.keyCode === 13) {
+                selectAndHide('txtFlightNumber', 'ddlFlightNumber', 'divFlightNumber');
+                //write code for selectedindex change
+                //getFlightDetails();
+                //$("#ctl00_CHDHMenu_txtDateOfArrival").focus();
+                //document.getElementById("txtDateOfArrival").focus();
+                return;
+            }
+            if (event.keyCode === 40 || event.keyCode === 38) { return; }
+        }
+
+        if (v === 'txtCourierCompanyName') {
+            searchDdl($txtCourierCo, $ddlCourierCo, $itemsCourierCo, 'divCourierCompanyName');
+            $("#divFlightNumber").hide();
+            return;
+        }
+
+        if (v === 'ddlCourierCompanyName') {
+            if (event.keyCode === 13) {
+                selectAndHide('txtCourierCompanyName', 'ddlCourierCompanyName', 'divCourierCompanyName');
+                document.getElementById("txtNumberOfPackages").focus();
+                return;
+            }
+            if (event.keyCode === 40 || event.keyCode === 38) { return; }
+        }
+
+        $("#divFlightNumber").hide();
+        $("#divCourierCompanyName").hide();
+
+    });
+
+    GetSession("");
+    $scope.sesson = "";
+
+    $scope.start = function () {
+        cfpLoadingBar.start();
+    };
+
+    $scope.complete = function () {
+        cfpLoadingBar.complete();
+    }
+
+    $scope.Clear = function () {
+        $window.location.reload();
+    }
+
+
+    function GetSession(Sessionname) {
+        var sessionValue = UserMgmtService.getSessions(Sessionname);
+
+        sessionValue.then(function (data, status, headers, config) {
+            $scope.sesson = data.data;
+            $scope.form1Search.TerminalCode = $scope.sesson.TerminalCode;
+            $scope.form1Search.FinancialYear = $scope.sesson.FinancialYear
+            BindDropdown($scope.sesson.TerminalCode);
+        }, function (data, status, header, config) {
+            alert(status);
+        });
+    }
+
+    function BindDropdown(TerminalCode) {
+
+        var response = ImportService.getFlightlst(TerminalCode);
+        response.then(function (data) {
+            $scope.FlightList = data.data;
+        }, function () {
+
+        });
+
+        response = ImportService.getCourierlst(TerminalCode);
+
+        response.then(function (data) {
+            $scope.courierList = data.data;
+            //console.log($scope.courierList);
+        }, function () {
+
+        });
+    }
+
+    $scope.SearchFormIData = function (form1Search) {
+
+        //console.log(form1Search.FlightList);
+
+        if (form1Search.FormINumber == undefined) {
+            form1Search.FormINumber = "";
+        }
+
+        if (form1Search.IGMNumber == undefined) {
+            form1Search.IGMNumber = "";
+        }
+
+        if (form1Search.FlightList == undefined) {
+            form1Search.FlightList = "";
+        }
+        else {
+            var FlightNumber = form1Search.FlightList.FlightNumber;
+        }
+
+        if (form1Search.FlightDate == undefined) {
+            form1Search.FlightDate = "";
+        }
+
+        if (form1Search.courierList == undefined) {
+            form1Search.courierList = "";
+        }
+        else {
+            var CourierCoId = form1Search.courierList.CourierCoId
+        }
+
+        if (form1Search.MAWBNumber == undefined) {
+            form1Search.MAWBNumber = "";
+        }
+
+        //console.log(form1Search);
+
+        var SearchFormI = ImportService.SearchFormI(form1Search.FormINumber, form1Search.IGMNumber, form1Search.FlightList == "" ? "" : FlightNumber, form1Search.FlightDate, form1Search.courierList == "" ? 0 : CourierCoId, form1Search.MAWBNumber, form1Search.TerminalCode, form1Search.FinancialYear);
+
+        SearchFormI.then(function (data, status, headers, config) {
+            //console.log(data.data);
+            $scope.start();
+            $scope.SearchFormI = data.data;
+            $scope.viewby = 10;
+            $scope.totalItems = $scope.SearchFormI.length;
+            $scope.currentPage = 1;
+            $scope.itemsPerPage = $scope.viewby;
+            $scope.maxSize = 10;
+            $scope.complete();
+        }, function (data, status, header, config) {
+            alert(status);
+        });
+       
+    };
+
+})

@@ -48,11 +48,22 @@ namespace EIAwithAngular.Controllers
 
         }
 
-        public IEnumerable<VW_UserDetail> Get(String LoginID, String UserName, String ActiveStaus, String LockStatus)
+        public IEnumerable<VW_UserDetail> Get(String ActiveStaus, String LockStatus,String LoginID, String UserName)
         {
             try
             {
-                return _IVW_UserDetail.SearchUsers(LoginID, UserName, ActiveStaus, LockStatus);
+                string[] ActiveStaus1 = new string[] { };
+                string[] LockStatus1 = new string[] { };
+
+                if(!string.IsNullOrEmpty(ActiveStaus))
+                {
+                   ActiveStaus1 = ActiveStaus.Split(',');
+                }
+                if (!string.IsNullOrEmpty(LockStatus))
+                {
+                    LockStatus1 = LockStatus.Split(',');
+                }
+                return _IVW_UserDetail.SearchUsers(LoginID, UserName, ActiveStaus1, LockStatus1);
             }
             catch (Exception)
             {

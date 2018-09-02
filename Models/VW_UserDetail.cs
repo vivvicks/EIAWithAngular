@@ -45,6 +45,5 @@ namespace EIAwithAngular.Models
         public string Status { get; set; }
         public string CreatedBy { get; set; }
         public System.DateTime CreatedOn { get; set; }
-        public Nullable<bool> checkedornot { get; set; }
     }
 }
